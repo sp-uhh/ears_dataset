@@ -1,0 +1,349 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+
+layout: default
+---
+
+
+<h1>EARS: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation</h1>
+
+<h2>Abstract</h2>
+
+<p>We release the EARS (<b>E</b>xpressive <b>A</b>nechoic <b>R</b>ecordings of <b>S</b>peech) dataset, a high-quality speech dataset comprising 107 speakers from diverse backgrounds, totalling in more than 100 hours of clean, anechoic speech data. The dataset covers a large range of different speaking styles, including emotional speech, different reading styles, non-verbal sounds, and conversational freeform speech. We benchmark various methods for speech enhancement and dereverberation on the dataset and evaluate their performance through a set of instrumental metrics. In addition, we conduct a listening test with 20 participants for the speech enhancement task, where a generative method is preferred. We introduce a blind test set that allows for automatic online evaluation of uploaded data. Dataset download links and automatic evaluation server can be found online.</p>
+
+
+<h2>EARS Dataset ours</h2>
+
+<p>A good speech dataset is characterized by its scale, diversity, and high recording quality. However, most existing datasets fall short in one or more of these characteristics, see Table 1. Most notably, a dataset that is of high recording quality (clean 48 kHz audio), has a sufficient scale, and covers the full range of hu- man speech as opposed to only reading or neutral speech does not exist to the best of our knowledge.</p>
+
+<table style="width:100%; border-collapse: collapse;">
+    <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
+        <strong>Table 1: Speech datasets.</strong> In contrast to existing datasets, the EARS dataset is of higher recording quality, large, and more diverse. Reading tasks feature seven styles (regular, loud, whisper, fast, slow, high pitch, and low pitch). Additionally, the dataset features unconstrained freeform speech and speech in 22 different emotional styles. We provide transcriptions of the reading portion and meta-data of the speakers (gender, age, race, first language). <sup>&dagger;</sup>contains files with limited bandwidth.
+    </caption>
+    <thead>
+        <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
+            <th>&nbsp;</th>
+            <th>hours</th>
+            <th>speakers</th>
+            <th>sample rate</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>DNS (LibriVox) [1]</td>
+            <td>556</td>
+            <td>1948</td>
+            <td>48 kHz<sup>&dagger;</sup></td>
+        </tr>
+        <tr>
+            <td>MSP-Conversation (v1.0) [2]</td>
+            <td>14</td>
+            <td>197</td>
+            <td>16 kHz</td>
+        </tr>
+        <tr>
+            <td>MSP-Podcast (v1.10) [3]</td>
+            <td>166</td>
+            <td>1458</td>
+            <td>16 kHz</td>
+        </tr>
+        <tr>
+            <td>LibriSpeech [4]</td>
+            <td>982</td>
+            <td>2484</td>
+            <td>16 kHz</td>
+        </tr>
+        <tr>
+            <td>LJSpeech [5]</td>
+            <td>24</td>
+            <td>1</td>
+            <td>22.05 kHz</td>
+        </tr>
+        <tr>
+            <td>TIMIT [6]</td>
+            <td>5</td>
+            <td>632</td>
+            <td>16 kHz</td>
+        </tr>
+        <tr>
+            <td>VCTK [7]</td>
+            <td>44</td>
+            <td>110</td>
+            <td>48 kHz</td>
+        </tr>
+        <tr>
+            <td>WSJ0 [8]</td>
+            <td>29</td>
+            <td>119</td>
+            <td>16 kHz</td>
+        </tr>
+        <tr style="border-bottom: 2px solid black;">
+            <td>EARS (ours)</td>
+            <td>101</td>
+            <td>107</td>
+            <td>48 kHz</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>EARS contains more than 100 h of anechoic speech recordings at 48 kHz from over 100 english speakers with high demographic diversity. The dataset spans the full range of human speech, including reading tasks in seven different reading styles, emotional reading and freeform speech in 22 different emotions, conversational speech, and non-verbal sounds like laughter or coughing.</p>
+
+
+<h2>Audio Examples</h2>
+
+<h3>Speech Enhancement</h3>
+
+<p>
+    Select an audio file: &nbsp;&nbsp;
+<select id="audioSelect" onchange="playAudio()">
+    <option value="p012/00152_4.2dB">p012/00152_4.2dB</option>
+<option value="p095/00600_2.6dB">p095/00600_2.6dB</option>
+<option value="p011/00107_16.1dB">p011/00107_16.1dB</option>
+<option value="p011/00096_12.4dB">p011/00096_12.4dB</option>
+<option value="p049/00585_14.8dB">p049/00585_14.8dB</option>
+<option value="p011/00060_12.9dB">p011/00060_12.9dB</option>
+<option value="p095/00612_17.3dB">p095/00612_17.3dB</option>
+<option value="p095/00643_0.9dB">p095/00643_0.9dB</option>
+<option value="p012/00232_11.5dB">p012/00232_11.5dB</option>
+<option value="p049/00524_15.3dB">p049/00524_15.3dB</option>
+<option value="p034/00411_9.0dB">p034/00411_9.0dB</option>
+<option value="p012/00261_-2.2dB">p012/00261_-2.2dB</option>
+<option value="p097/00780_13.5dB">p097/00780_13.5dB</option>
+<option value="p097/00762_5.2dB">p097/00762_5.2dB</option>
+<option value="p034/00422_8.8dB">p034/00422_8.8dB</option>
+<option value="p049/00483_12.1dB">p049/00483_12.1dB</option>
+<option value="p097/00850_13.7dB">p097/00850_13.7dB</option>
+<option value="p097/00880_2.1dB">p097/00880_2.1dB</option>
+<option value="p034/00395_16.5dB">p034/00395_16.5dB</option>
+<option value="p097/00781_10.5dB">p097/00781_10.5dB</option>
+<option value="p012/00168_15.0dB">p012/00168_15.0dB</option>
+<option value="p095/00646_7.5dB">p095/00646_7.5dB</option>
+<option value="p011/00069_17.0dB">p011/00069_17.0dB</option>
+<option value="p097/00815_6.3dB">p097/00815_6.3dB</option>
+<option value="p012/00300_9.7dB">p012/00300_9.7dB</option>
+<option value="p034/00350_11.1dB">p034/00350_11.1dB</option>
+<option value="p097/00809_12.7dB">p097/00809_12.7dB</option>
+<option value="p097/00864_2.2dB">p097/00864_2.2dB</option>
+<option value="p034/00406_11.1dB">p034/00406_11.1dB</option>
+<option value="p012/00205_2.1dB">p012/00205_2.1dB</option>
+<option value="p012/00155_7.8dB">p012/00155_7.8dB</option>
+<option value="p011/00128_14.2dB">p011/00128_14.2dB</option>
+<option value="p011/00127_-0.6dB">p011/00127_-0.6dB</option>
+<option value="p012/00225_-0.3dB">p012/00225_-0.3dB</option>
+<option value="p012/00212_-1.1dB">p012/00212_-1.1dB</option>
+<option value="p012/00171_8.5dB">p012/00171_8.5dB</option>
+<option value="p049/00474_0.1dB">p049/00474_0.1dB</option>
+<option value="p034/00336_6.1dB">p034/00336_6.1dB</option>
+<option value="p034/00402_4.9dB">p034/00402_4.9dB</option>
+<option value="p095/00599_12.0dB">p095/00599_12.0dB</option>
+<option value="p095/00729_17.5dB">p095/00729_17.5dB</option>
+<option value="p012/00243_2.4dB">p012/00243_2.4dB</option>
+<option value="p049/00502_1.9dB">p049/00502_1.9dB</option>
+<option value="p049/00519_-0.2dB">p049/00519_-0.2dB</option>
+<option value="p095/00647_10.1dB">p095/00647_10.1dB</option>
+<option value="p097/00754_11.4dB">p097/00754_11.4dB</option>
+<option value="p011/00053_14.4dB">p011/00053_14.4dB</option>
+<option value="p097/00838_0.7dB">p097/00838_0.7dB</option>
+<option value="p034/00315_8.9dB">p034/00315_8.9dB</option>
+<option value="p095/00651_14.9dB">p095/00651_14.9dB</option>
+</select>
+</p>
+
+<p>
+Noisy: <br>
+<audio id="audioPlayerNoisy" controls>
+    <source id="audioSourceNoisy" src="/assets/audio/se/noisy/p012/00152_4.2dB.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+</p>
+
+<p>
+Conv-TasNet: <br>
+<audio id="audioPlayerConvTasNet" controls>
+    <source id="audioSourceConvTasNet" src="/assets/audio/se/convtasnet/p012/00152_4.2dB.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+</p>
+
+<p>
+CDiffuSE: <br>
+<audio id="audioPlayerCDiffuSE" controls>
+    <source id="audioSourceCDiffuSE" src="/assets/audio/se/cdiffuse/p012/00152_4.2dB.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</p>
+
+<p>
+Demucs: <br>
+<audio id="audioPlayerDemucs" controls>
+    <source id="audioSourceDemucs" src="/assets/audio/se/demucs/p012/00152_4.2dB.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</p>
+
+<p>
+SGMSE+: <br>
+<audio id="audioPlayerSGMSE" controls>
+    <source id="audioSourceSGMSE" src="/assets/audio/se/sgmse/p012/00152_4.2dB.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+</p>
+<p>
+Clean: <br>
+    <audio id="audioPlayerClean" controls>
+        <source id="audioSourceClean" src="/assets/audio/se/clean/p012/00152_4.2dB.wav" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+</p>
+
+<script>
+    function playAudio() {
+        var audioPlayerNoisy = document.getElementById('audioPlayerNoisy');
+        var audioPlayerConvTasNet = document.getElementById('audioPlayerConvTasNet');
+        var audioPlayerCDiffuSE = document.getElementById('audioPlayerCDiffuSE');
+        var audioPlayerDemucs = document.getElementById('audioPlayerDemucs');
+        var audioPlayerSGMSE = document.getElementById('audioPlayerSGMSE');
+        var audioPlayerClean = document.getElementById('audioPlayerClean');
+        var audioSourceNoisy = document.getElementById('audioSourceNoisy');
+        var audioSourceConvTasNet = document.getElementById('audioSourceConvTasNet');
+        var audioSourceCDiffuSE = document.getElementById('audioSourceCDiffuSE');
+        var audioSourceDemucs = document.getElementById('audioSourceDemucs');
+        var audioSourceSGMSE = document.getElementById('audioSourceSGMSE');
+        var audioSourceClean = document.getElementById('audioSourceClean');
+        var selectedAudio = document.getElementById('audioSelect').value;
+
+        if (selectedAudio) {
+            // Set the source of the source elements, not the audio players
+            audioSourceNoisy.src = "/assets/audio/se/noisy/" + selectedAudio + ".wav"; 
+            audioPlayerNoisy.load(); // Load the selected audio file using the audio player
+
+            audioSourceConvTasNet.src = "/assets/audio/se/convtasnet/" + selectedAudio + ".wav";
+            audioPlayerConvTasNet.load(); // Load the selected audio file using the audio player
+
+            audioSourceCDiffuSE.src = "/assets/audio/se/cdiffuse/" + selectedAudio + ".wav";
+            audioPlayerCDiffuSE.load(); // Load the selected audio file using the audio player
+
+            audioSourceDemucs.src = "/assets/audio/se/demucs/" + selectedAudio + ".wav";
+            audioPlayerDemucs.load(); // Load the selected audio file using the audio player
+
+            audioSourceSGMSE.src = "/assets/audio/se/sgmse/" + selectedAudio + ".wav";
+            audioPlayerSGMSE.load(); // Load the selected audio file using the audio player
+
+            audioSourceClean.src = "/assets/audio/se/clean/" + selectedAudio + ".wav";
+            audioPlayerClean.load(); // Load the selected audio file using the audio player
+            
+            // This will ensure that the audio players are updating their children source elements
+            // and reloading them
+        }
+    }
+</script>
+
+  
+<h3>Dereverberation</h3>
+
+<p>
+    Select an audio file: &nbsp;&nbsp;
+<select id="audioSelectReverb" onchange="playAudioReverb()">
+    <option value="p012/00258_0.19">p012/00258_0.19</option>
+    <option value="p095/00709_0.46">p095/00709_0.46</option>
+    <option value="p011/00043_0.26">p011/00043_0.26</option>
+    <option value="p011/00080_0.60">p011/00080_0.60</option>
+    <option value="p049/00550_0.56">p049/00550_0.56</option>
+    <option value="p011/00116_0.18">p011/00116_0.18</option>
+    <option value="p095/00713_0.25">p095/00713_0.25</option>
+    <option value="p095/00651_0.77">p095/00651_0.77</option>
+    <option value="p012/00259_0.24">p012/00259_0.24</option>
+    <option value="p049/00570_0.69">p049/00570_0.69</option>
+    <option value="p034/00412_0.66">p034/00412_0.66</option>
+    <option value="p012/00220_10.49">p012/00220_10.49</option>
+    <option value="p097/00810_0.99">p097/00810_0.99</option>
+    <option value="p097/00849_1.62">p097/00849_1.62</option>
+    <option value="p034/00403_1.27">p034/00403_1.27</option>
+    <option value="p049/00495_1.00">p049/00495_1.00</option>
+    <option value="p097/00878_33.15">p097/00878_33.15</option>
+    <option value="p097/00845_0.36">p097/00845_0.36</option>
+    <option value="p034/00350_4.27">p034/00350_4.27</option>
+    <option value="p097/00764_0.50">p097/00764_0.50</option>
+    <option value="p012/00296_6.01">p012/00296_6.01</option>
+    <option value="p095/00623_0.38">p095/00623_0.38</option>
+    <option value="p011/00045_0.30">p011/00045_0.30</option>
+    <option value="p097/00869_0.23">p097/00869_0.23</option>
+    <option value="p012/00204_0.84">p012/00204_0.84</option>
+    <option value="p034/00397_0.65">p034/00397_0.65</option>
+    <option value="p097/00781_0.21">p097/00781_0.21</option>
+    <option value="p097/00864_0.20">p097/00864_0.20</option>
+    <option value="p034/00421_0.21">p034/00421_0.21</option>
+    <option value="p012/00189_0.41">p012/00189_0.41</option>
+    <option value="p012/00246_0.55">p012/00246_0.55</option>
+    <option value="p011/00067_0.36">p011/00067_0.36</option>
+    <option value="p011/00079_0.22">p011/00079_0.22</option>
+    <option value="p012/00151_0.57">p012/00151_0.57</option>
+    <option value="p012/00254_0.60">p012/00254_0.60</option>
+    <option value="p012/00275_0.32">p012/00275_0.32</option>
+    <option value="p049/00560_0.70">p049/00560_0.70</option>
+    <option value="p034/00407_0.53">p034/00407_0.53</option>
+    <option value="p034/00306_0.26">p034/00306_0.26</option>
+    <option value="p095/00634_0.37">p095/00634_0.37</option>
+    <option value="p095/00714_0.63">p095/00714_0.63</option>
+    <option value="p012/00282_0.48">p012/00282_0.48</option>
+    <option value="p049/00533_0.65">p049/00533_0.65</option>
+    <option value="p049/00487_0.90">p049/00487_0.90</option>
+    <option value="p095/00660_0.88">p095/00660_0.88</option>
+    <option value="p097/00814_0.86">p097/00814_0.86</option>
+    <option value="p011/00004_0.42">p011/00004_0.42</option>
+    <option value="p097/00892_0.59">p097/00892_0.59</option>
+    <option value="p034/00378_0.26">p034/00378_0.26</option>
+    <option value="p095/00681_0.97">p095/00681_0.97</option>
+</select>
+</p>
+
+<p>
+Reverberant: <br>
+<audio id="audioPlayerReverb" controls>
+    <source id="audioSourceReverb" src="/assets/audio/derev/noisy/p012/00258_0.19.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+</p>
+
+<p>
+SGMSE+: <br>
+<audio id="audioPlayerReverbSGMSE" controls>
+    <source id="audioSourceReverbSGMSE" src="/assets/audio/derev/sgmse/p012/00258_0.19.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+</p>
+<p>
+Clean: <br>
+<audio id="audioPlayerReverbClean" controls>
+    <source id="audioSourceReverbClean" src="/assets/audio/derev/clean/p012/00258_0.19.wav" type="audio/wav">
+    Your browser does not support the audio element.
+</audio>
+</p>
+
+<script>
+    function playAudioReverb() {
+        var audioPlayerReverb = document.getElementById('audioPlayerReverb');
+        var audioPlayerReverbSGMSE = document.getElementById('audioPlayerReverbSGMSE');
+        var audioPlayerReverbClean = document.getElementById('audioPlayerReverbClean');
+        var audioSourceReverb = document.getElementById('audioSourceReverb');
+        var audioSourceReverbSGMSE = document.getElementById('audioSourceReverbSGMSE');
+        var audioSourceReverbClean = document.getElementById('audioSourceReverbClean');
+        var selectedAudioReverb = document.getElementById('audioSelectReverb').value;
+
+        if (selectedAudioReverb) {
+            // Set the source of the source elements, not the audio players
+            audioSourceReverb.src = "/assets/audio/derev/noisy/" + selectedAudioReverb + ".wav"; 
+            audioPlayerReverb.load(); // Load the selected audio file using the audio player
+
+            audioSourceReverbSGMSE.src = "/assets/audio/derev/sgmse/" + selectedAudioReverb + ".wav";
+            audioPlayerReverbSGMSE.load(); // Load the selected audio file using the audio player
+
+            audioSourceReverbClean.src = "/assets/audio/derev/clean/" + selectedAudioReverb + ".wav";
+            audioPlayerReverbClean.load(); // Load the selected audio file using the audio player
+            
+            // This will ensure that the audio players are updating their children source elements
+            // and reloading them
+        }
+    }
+</script>
+
+
