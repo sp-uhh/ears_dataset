@@ -5,13 +5,11 @@
 layout: default
 ---
 
-
 <h1>EARS: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation</h1>
 
 <h2>Abstract</h2>
 
 <p>We release the EARS (<b>E</b>xpressive <b>A</b>nechoic <b>R</b>ecordings of <b>S</b>peech) dataset, a high-quality speech dataset comprising 107 speakers from diverse backgrounds, totalling in more than 100 hours of clean, anechoic speech data. The dataset covers a large range of different speaking styles, including emotional speech, different reading styles, non-verbal sounds, and conversational freeform speech. We benchmark various methods for speech enhancement and dereverberation on the dataset and evaluate their performance through a set of instrumental metrics. In addition, we conduct a listening test with 20 participants for the speech enhancement task, where a generative method is preferred. We introduce a blind test set that allows for automatic online evaluation of uploaded data. Dataset download links and automatic evaluation server can be found online.</p>
-
 
 <h2>EARS Dataset</h2>
 
@@ -49,7 +47,7 @@ layout: default
             <td>16 kHz</td>
         </tr> -->
         <tr>
-            <td>LibriSpeech <span class="reference" data-ref="librispeech"></span></td>
+            <td id="cite-librispeech">LibriSpeech <span class="reference" data-ref="librispeech"></span></td>
             <td>982</td>
             <td>2484</td>
             <td>16 kHz</td>
@@ -101,7 +99,7 @@ layout: default
 
 <h3>Speech Enhancement (EARS-WHAM)</h3>
 
-<p>For the task of speech enhancement, we construct the EARS-WHAM dataset, which mixes speech from the EARS dataset with real noise recordings from the WHAM! dataset [23]. More details can be found in the <a href="">paper</a>.</p>
+<p>For the task of speech enhancement, we construct the EARS-WHAM dataset, which mixes speech from the EARS dataset with real noise recordings from the WHAM! dataset <span class="reference" data-ref="wham"></span>. More details can be found in the <a href="">paper</a>.</p>
 
 <h4>Results</h4>
 
@@ -569,7 +567,6 @@ SGMSE+: <br>
     </tbody>
 </table>
 
-
 <h4>Audio Examples</h4>
 
 <p>
@@ -698,43 +695,54 @@ Clean: <br>
             "convtasnet": "Y. Luo and N. Mesgarani, “Conv-TasNet: Surpassing ideal time–frequency magnitude masking for speech separation,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 27, no. 8, pp. 1256–1266, 2019.",
             "cdiffuse": "Y.-J. Lu, Z.-Q. Wang, S. Watanabe, A. Richard, C. Yu, and Y. Tsao, “Conditional diffusion probabilistic model for speech enhancement,” in IEEE International Conference on Acoustics, Speech and Signal Processing, 2022, pp. 7402–7406.",
             "demucs": "S. Rouard, F. Massa, and A. D ́efossez, “Hybrid transformers for music source separation,” in IEEE International Conference on Acoustics, Speech and Signal Processing, 2023.",
-            "sgmse": "J. Richter, S. Welker, J.-M. Lemercier, B. Lay, and T. Gerkmann, “Speech enhancement and dereverberation with diffusion-based generative models,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 31, pp. 2351–2364, 2023."
+            "sgmse": "J. Richter, S. Welker, J.-M. Lemercier, B. Lay, and T. Gerkmann, “Speech enhancement and dereverberation with diffusion-based generative models,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 31, pp. 2351–2364, 2023.",
+            "wham": "G. Wichern, J. Antognini, M. Flynn, L. R. Zhu, E. McQuinn, D. Crow, E. Manilow, and J. L. Roux, “WHAM!: Extending speech separation to noisy environments,” in ISCA Interspeech, 2019, pp. 1368–1372."
         };
     
         const refList = document.getElementById('refList');
+        const refTotal = Object.keys(references).length;
+        const maxWidth = `${Math.ceil(Math.log10(refTotal + 1)) * 10 + 5}px`;
 
-    let refCounter = 0;
-    for (const refKey of Object.keys(references)) {
-        refCounter++;
-        const li = document.createElement('li');
-        li.id = `ref-${refCounter}`; // ID for linking
-        li.style.display = 'flex';
-        li.style.alignItems = 'baseline';
-        li.style.marginBottom = '5px';
-
-        const numberSpan = document.createElement('span');
-        numberSpan.textContent = `[${refCounter}]`;
-        numberSpan.style.fontWeight = 'regular';
-        numberSpan.style.marginRight = '5px';
-        numberSpan.style.whiteSpace = 'nowrap';
-
-        const textSpan = document.createElement('span');
-        textSpan.textContent = references[refKey];
-
-        li.appendChild(numberSpan);
-        li.appendChild(textSpan);
-        refList.appendChild(li);
-
-        // Update in-text references
-        document.querySelectorAll(`.reference[data-ref="${refKey}"]`).forEach(span => {
-            const link = document.createElement('a');
-            link.href = `#${li.id}`;
-            link.innerHTML = `[${refCounter}]`;
-            link.style.textDecoration = 'none';
-            link.style.marginRight = '5px';
-            span.appendChild(link);
+        Object.entries(references).forEach(([key, ref], index) => {
+            const refNumber = index + 1;
+            const li = document.createElement('li');
+            li.id = `ref-${refNumber}`;
+            li.style.display = 'flex';
+            li.style.alignItems = 'baseline';
+            li.style.marginBottom = '5px';
+    
+            const numberSpan = document.createElement('span');
+            numberSpan.style.fontWeight = 'regular';
+            numberSpan.style.minWidth = maxWidth;
+            numberSpan.style.textAlign = 'right';
+            numberSpan.style.marginRight = '10px';
+            numberSpan.style.whiteSpace = 'nowrap';
+    
+            // Make the reference number a clickable link
+            const numberLink = document.createElement('a');
+            numberLink.href = `#cite-${key}`;
+            numberLink.textContent = `[${refNumber}]`;
+            numberLink.style.textDecoration = 'none';
+    
+            numberSpan.appendChild(numberLink);
+    
+            const textSpan = document.createElement('span');
+            textSpan.textContent = ref;
+    
+            li.appendChild(numberSpan);
+            li.appendChild(textSpan);
+            refList.appendChild(li);
+    
+            // Making In-text references linkable
+            document.querySelectorAll(`.reference[data-ref="${key}"]`).forEach((span, i) => {
+            const citeId = `cite-${key}-${i}`;
+            const citeLink = document.createElement('a');
+            citeLink.href = `#ref-${refNumber}`;
+            citeLink.textContent = `[${refNumber}]`;
+            span.id = citeId; 
+            span.appendChild(citeLink);
         });
-    }
+    });
 });
-</script>
+    </script>
 
