@@ -29,7 +29,7 @@ layout: default
     </thead>
     <tbody>
         <tr>
-            <td>DNS (LibriVox) <span class="reference" data-ref="librivox"></span></td>
+            <td>DNS (LibriVox) <span class="reference" data-ref="librivox librispeech convtasnet"></span></td>
             <td>556</td>
             <td>1948</td>
             <td>48 kHz<sup>&dagger;</sup></td>
@@ -704,45 +704,54 @@ Clean: <br>
         const maxWidth = `${Math.ceil(Math.log10(refTotal + 1)) * 10 + 5}px`;
 
         Object.entries(references).forEach(([key, ref], index) => {
-        const refNumber = index + 1;
-        const li = document.createElement('li');
-        li.id = `ref-${refNumber}`;
-        li.style.display = 'flex';
-        li.style.alignItems = 'baseline';
-        li.style.marginBottom = '5px';
+            const refNumber = index + 1;
+            const li = document.createElement('li');
+            li.id = `ref-${refNumber}`;
+            li.style.display = 'flex';
+            li.style.alignItems = 'baseline';
+            li.style.marginBottom = '5px';
 
-        const numberSpan = document.createElement('span');
-        numberSpan.style.fontWeight = 'regular';
-        numberSpan.style.minWidth = maxWidth;
-        numberSpan.style.textAlign = 'right';
-        numberSpan.style.marginRight = '10px';
-        numberSpan.style.whiteSpace = 'nowrap';
+            const numberSpan = document.createElement('span');
+            numberSpan.style.fontWeight = 'regular';
+            numberSpan.style.minWidth = maxWidth;
+            numberSpan.style.textAlign = 'right';
+            numberSpan.style.marginRight = '10px';
+            numberSpan.style.whiteSpace = 'nowrap';
 
-        // Adjusted to link to the first citation in the text for each reference key
-        const numberLink = document.createElement('a');
-        numberLink.href = `#cite-${key}-0`;  // Assuming the first instance is what we want to link back to
-        numberLink.textContent = `[${refNumber}]`;
-        numberLink.style.textDecoration = 'none';
-        
-        numberSpan.appendChild(numberLink);
+            const numberLink = document.createElement('a');
+            numberLink.href = `#cite-${key}-0`; // Assuming the first instance is what we want to link back to
+            numberLink.textContent = `[${refNumber}]`;
+            numberLink.style.textDecoration = 'none';
+            numberSpan.appendChild(numberLink);
 
-        const textSpan = document.createElement('span');
-        textSpan.textContent = ref;
+            const textSpan = document.createElement('span');
+            textSpan.textContent = ref;
 
-        li.appendChild(numberSpan);
-        li.appendChild(textSpan);
-        refList.appendChild(li);
-
-        // Making In-text references linkable
-        document.querySelectorAll(`.reference[data-ref="${key}"]`).forEach((span, i) => {
-            const citeId = `cite-${key}-${i}`;
-            const citeLink = document.createElement('a');
-            citeLink.href = `#ref-${refNumber}`;
-            citeLink.textContent = `[${refNumber}]`;
-            span.id = citeId; 
-            span.appendChild(citeLink);
+            li.appendChild(numberSpan);
+            li.appendChild(textSpan);
+            refList.appendChild(li);
         });
-    });
-});
-</script>
 
+        // Making In-text references linkable and combine multiple references
+        document.querySelectorAll('.reference').forEach(span => {
+            const keys = span.getAttribute('data-ref').split(' ');
+            const refNumbers = keys.map(key => {
+                const index = Object.keys(references).indexOf(key);
+                return index + 1;
+            });
+            const refText = `[${refNumbers.join(', ')}]`;
+            keys.forEach((key, i) => {
+                const citeId = `cite-${key}-${i}`;
+                const citeLink = document.createElement('a');
+                citeLink.href = `#ref-${refNumbers[i]}`;
+                citeLink.textContent = refText;
+                span.id = citeId;
+                citeLink.style.textDecoration = 'none';
+
+                // Dynamically create links only for the first element to avoid duplicates
+                if (i === 0) span.appendChild(citeLink);
+            });
+        });
+
+    });
+</script>
