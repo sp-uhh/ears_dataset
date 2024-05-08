@@ -29,7 +29,7 @@ layout: default
     </thead>
     <tbody>
         <tr>
-            <td>DNS (LibriVox) <span class="reference" data-ref="librivox librispeech convtasnet"></span></td>
+            <td>DNS (LibriVox) <span class="reference" data-ref="librivox"></span></td>
             <td>556</td>
             <td>1948</td>
             <td>48 kHz<sup>&dagger;</sup></td>
@@ -698,12 +698,33 @@ Clean: <br>
             "sgmse": "J. Richter, S. Welker, J.-M. Lemercier, B. Lay, and T. Gerkmann, “Speech enhancement and dereverberation with diffusion-based generative models,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 31, pp. 2351–2364, 2023.",
             "wham": "G. Wichern, J. Antognini, M. Flynn, L. R. Zhu, E. McQuinn, D. Crow, E. Manilow, and J. L. Roux, “WHAM!: Extending speech separation to noisy environments,” in ISCA Interspeech, 2019, pp. 1368–1372."
         };
+
+        // Collect keys in order of their appearance, without duplication
+        const referenceElements = document.querySelectorAll('.reference');
+        const orderedKeys = [];
+        referenceElements.forEach(element => {
+            // Split the keys and iterate over them
+            const keys = element.dataset.ref.split(' ');
+            keys.forEach(key => {
+                // Add key if it's not already in the list to maintain first appearance order
+                if (!orderedKeys.includes(key) && references[key]) {
+                    orderedKeys.push(key);
+                }
+            });
+        });
+        let sortedReferences = {};
+        // Populate the sorted references object based on orderedKeys
+        orderedKeys.forEach(key => {
+            if (references[key]) {
+                sortedReferences[key] = references[key];
+            }
+        });
     
         const refList = document.getElementById('refList');
-        const refTotal = Object.keys(references).length;
+        const refTotal = Object.keys(sortedReferences).length;
         const maxWidth = `${Math.ceil(Math.log10(refTotal + 1)) * 10 + 5}px`;
 
-        Object.entries(references).forEach(([key, ref], index) => {
+        Object.entries(sortedReferences).forEach(([key, ref], index) => {
             const refNumber = index + 1;
             const li = document.createElement('li');
             li.id = `ref-${refNumber}`;
@@ -736,20 +757,31 @@ Clean: <br>
         document.querySelectorAll('.reference').forEach(span => {
             const keys = span.getAttribute('data-ref').split(' ');
             const refNumbers = keys.map(key => {
-                const index = Object.keys(references).indexOf(key);
+                const index = Object.keys(sortedReferences).indexOf(key);
                 return index + 1;
             });
-            const refText = `[${refNumbers.join(', ')}]`;
+            refText = `[${refNumbers.join(', ')}]`;
             keys.forEach((key, i) => {
-                const citeId = `cite-${key}-${i}`;
+                // Set up string if there are multiple references
+                if (keys.length > 1 ) {
+                    if (i === 0 ) {
+                        refText = `[${refNumbers[i]}, `;
+                    } else if (i === keys.length - 1) {
+                        refText = `${refNumbers[i]}]`;
+                    } else {
+                        refText = `${refNumbers[i]}, `;
+                    }
+                // Set up string if there is only one reference
+                } else {
+                    refText = `[${refNumbers[i]}]`;
+                    }
+                const citeId = `cite-${key}-0`; 
                 const citeLink = document.createElement('a');
                 citeLink.href = `#ref-${refNumbers[i]}`;
                 citeLink.textContent = refText;
-                span.id = citeId;
+                citeLink.id = citeId;
                 citeLink.style.textDecoration = 'none';
-
-                // Dynamically create links only for the first element to avoid duplicates
-                if (i === 0) span.appendChild(citeLink);
+                span.appendChild(citeLink);
             });
         });
 
