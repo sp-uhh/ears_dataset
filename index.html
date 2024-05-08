@@ -9,15 +9,24 @@ layout: default
 
 <h2>Abstract</h2>
 
-<p>We release the EARS (<b>E</b>xpressive <b>A</b>nechoic <b>R</b>ecordings of <b>S</b>peech) dataset, a high-quality speech dataset comprising 107 speakers from diverse backgrounds, totalling in more than 100 hours of clean, anechoic speech data. The dataset covers a large range of different speaking styles, including emotional speech, different reading styles, non-verbal sounds, and conversational freeform speech. We benchmark various methods for speech enhancement and dereverberation on the dataset and evaluate their performance through a set of instrumental metrics. In addition, we conduct a listening test with 20 participants for the speech enhancement task, where a generative method is preferred. We introduce a blind test set that allows for automatic online evaluation of uploaded data. Dataset download links and automatic evaluation server can be found online.</p>
+<p>We release the EARS (<b>E</b>xpressive <b>A</b>nechoic <b>R</b>ecordings of <b>S</b>peech) dataset, a high-quality
+    speech dataset comprising 107 speakers from diverse backgrounds, totalling in more than 100 hours of clean, anechoic
+    speech data. The dataset covers a large range of different speaking styles, including emotional speech, different
+    reading styles, non-verbal sounds, and conversational freeform speech. We benchmark various methods for speech
+    enhancement and dereverberation on the dataset and evaluate their performance through a set of instrumental metrics.
+    In addition, we conduct a listening test with 20 participants for the speech enhancement task, where a generative
+    method is preferred. We introduce a blind test set that allows for automatic online evaluation of uploaded data.
+    Dataset download links and automatic evaluation server can be found online.</p>
 
 <h2>EARS Dataset</h2>
 
-<p>A good speech dataset is characterized by its scale, diversity, and high recording quality. However, most existing datasets fall short in one or more of these characteristics, see Table 1.</p>
+<p>A good speech dataset is characterized by its scale, diversity, and high recording quality. However, most existing
+    datasets fall short in one or more of these characteristics, see Table 1.</p>
 
 <table style="width:100%; border-collapse: collapse;">
     <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
-        <strong>Table 1: Speech datasets.</strong> In contrast to existing datasets, the EARS dataset is of higher recording quality, large, and more diverse. <sup>&dagger;</sup>contains files with limited bandwidth.
+        <strong>Table 1: Speech datasets.</strong> In contrast to existing datasets, the EARS dataset is of higher
+        recording quality, large, and more diverse. <sup>&dagger;</sup>contains files with limited bandwidth.
     </caption>
     <thead>
         <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
@@ -45,7 +54,7 @@ layout: default
             <td>166</td>
             <td>1458</td>
             <td>16 kHz</td>
-        </tr> -->   
+        </tr> -->
         <tr>
             <td>LibriSpeech <span class="reference" data-ref="librispeech"></span></td>
             <td>982</td>
@@ -85,7 +94,13 @@ layout: default
     </tbody>
 </table>
 
-<p>EARS contains more than 100 h of anechoic speech recordings at 48 kHz from over 100 english speakers with high demographic diversity. The dataset spans the full range of human speech, including reading tasks in seven different reading styles, emotional reading and freeform speech in 22 different emotions, conversational speech, and non-verbal sounds like laughter or coughing. Reading tasks feature seven styles (regular, loud, whisper, fast, slow, high pitch, and low pitch). Additionally, the dataset features unconstrained freeform speech and speech in 22 different emotional styles. We provide transcriptions of the reading portion and meta-data of the speakers (gender, age, race, first language).</p>
+<p>EARS contains more than 100 h of anechoic speech recordings at 48 kHz from over 100 english speakers with high
+    demographic diversity. The dataset spans the full range of human speech, including reading tasks in seven different
+    reading styles, emotional reading and freeform speech in 22 different emotions, conversational speech, and
+    non-verbal sounds like laughter or coughing. Reading tasks feature seven styles (regular, loud, whisper, fast, slow,
+    high pitch, and low pitch). Additionally, the dataset features unconstrained freeform speech and speech in 22
+    different emotional styles. We provide transcriptions of the reading portion and meta-data of the speakers (gender,
+    age, race, first language).</p>
 
 <h3>Audio Examples</h3>
 
@@ -93,19 +108,23 @@ layout: default
 
 <h2>Benchmarks</h2>
 
-<p>The EARS dataset enables various speech processing tasks to be evaluated in a controlled and comparable way. Here, we present benchmarks for speech enhancement and dereverberation tasks.</p>
+<p>The EARS dataset enables various speech processing tasks to be evaluated in a controlled and comparable way. Here, we
+    present benchmarks for speech enhancement and dereverberation tasks.</p>
 
 <br>
 
 <h3>Speech Enhancement (EARS-WHAM)</h3>
 
-<p>For the task of speech enhancement, we construct the EARS-WHAM dataset, which mixes speech from the EARS dataset with real noise recordings from the WHAM! dataset <span class="reference" data-ref="wham"></span>. More details can be found in the <a href="">paper</a>.</p>
+<p>For the task of speech enhancement, we construct the EARS-WHAM dataset, which mixes speech from the EARS dataset with
+    real noise recordings from the WHAM! dataset <span class="reference" data-ref="wham"></span>. More details can be
+    found in the <a href="">paper</a>.</p>
 
 <h4>Results</h4>
 
 <table style="width:100%; border-collapse: collapse;">
     <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
-        <strong>Table 2: Results on EARS-WHAM.</strong> Values indicate the mean of the metrics over the test set. The best results are highlighted in bold.
+        <strong>Table 2: Results on EARS-WHAM.</strong> Values indicate the mean of the metrics over the test set. The
+        best results are highlighted in bold.
     </caption>
     <thead>
         <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
@@ -176,99 +195,99 @@ layout: default
 <h4>Audio Examples</h4>
 
 <p>Select an audio file: &nbsp;&nbsp;
-<select id="audioSelect" onchange="playAudio()">
-<option value="p012/00152_4.2dB">p012/00152_4.2dB</option>
-<option value="p095/00600_2.6dB">p095/00600_2.6dB</option>
-<option value="p011/00107_16.1dB">p011/00107_16.1dB</option>
-<option value="p011/00096_12.4dB">p011/00096_12.4dB</option>
-<option value="p049/00585_14.8dB">p049/00585_14.8dB</option>
-<option value="p011/00060_12.9dB">p011/00060_12.9dB</option>
-<option value="p095/00612_17.3dB">p095/00612_17.3dB</option>
-<option value="p095/00643_0.9dB">p095/00643_0.9dB</option>
-<option value="p012/00232_11.5dB">p012/00232_11.5dB</option>
-<option value="p049/00524_15.3dB">p049/00524_15.3dB</option>
-<option value="p034/00411_9.0dB">p034/00411_9.0dB</option>
-<option value="p012/00261_-2.2dB">p012/00261_-2.2dB</option>
-<option value="p097/00780_13.5dB">p097/00780_13.5dB</option>
-<option value="p097/00762_5.2dB">p097/00762_5.2dB</option>
-<option value="p034/00422_8.8dB">p034/00422_8.8dB</option>
-<option value="p049/00483_12.1dB">p049/00483_12.1dB</option>
-<option value="p097/00850_13.7dB">p097/00850_13.7dB</option>
-<option value="p097/00880_2.1dB">p097/00880_2.1dB</option>
-<option value="p034/00395_16.5dB">p034/00395_16.5dB</option>
-<option value="p097/00781_10.5dB">p097/00781_10.5dB</option>
-<option value="p012/00168_15.0dB">p012/00168_15.0dB</option>
-<option value="p095/00646_7.5dB">p095/00646_7.5dB</option>
-<option value="p011/00069_17.0dB">p011/00069_17.0dB</option>
-<option value="p097/00815_6.3dB">p097/00815_6.3dB</option>
-<option value="p012/00300_9.7dB">p012/00300_9.7dB</option>
-<option value="p034/00350_11.1dB">p034/00350_11.1dB</option>
-<option value="p097/00809_12.7dB">p097/00809_12.7dB</option>
-<option value="p097/00864_2.2dB">p097/00864_2.2dB</option>
-<option value="p034/00406_11.1dB">p034/00406_11.1dB</option>
-<option value="p012/00205_2.1dB">p012/00205_2.1dB</option>
-<option value="p012/00155_7.8dB">p012/00155_7.8dB</option>
-<option value="p011/00128_14.2dB">p011/00128_14.2dB</option>
-<option value="p011/00127_-0.6dB">p011/00127_-0.6dB</option>
-<option value="p012/00225_-0.3dB">p012/00225_-0.3dB</option>
-<option value="p012/00212_-1.1dB">p012/00212_-1.1dB</option>
-<option value="p012/00171_8.5dB">p012/00171_8.5dB</option>
-<option value="p049/00474_0.1dB">p049/00474_0.1dB</option>
-<option value="p034/00336_6.1dB">p034/00336_6.1dB</option>
-<option value="p034/00402_4.9dB">p034/00402_4.9dB</option>
-<option value="p095/00599_12.0dB">p095/00599_12.0dB</option>
-<option value="p095/00729_17.5dB">p095/00729_17.5dB</option>
-<option value="p012/00243_2.4dB">p012/00243_2.4dB</option>
-<option value="p049/00502_1.9dB">p049/00502_1.9dB</option>
-<option value="p049/00519_-0.2dB">p049/00519_-0.2dB</option>
-<option value="p095/00647_10.1dB">p095/00647_10.1dB</option>
-<option value="p097/00754_11.4dB">p097/00754_11.4dB</option>
-<option value="p011/00053_14.4dB">p011/00053_14.4dB</option>
-<option value="p097/00838_0.7dB">p097/00838_0.7dB</option>
-<option value="p034/00315_8.9dB">p034/00315_8.9dB</option>
-<option value="p095/00651_14.9dB">p095/00651_14.9dB</option>
-</select>
+    <select id="audioSelect" onchange="playAudio()">
+        <option value="p012/00152_4.2dB">p012/00152_4.2dB</option>
+        <option value="p095/00600_2.6dB">p095/00600_2.6dB</option>
+        <option value="p011/00107_16.1dB">p011/00107_16.1dB</option>
+        <option value="p011/00096_12.4dB">p011/00096_12.4dB</option>
+        <option value="p049/00585_14.8dB">p049/00585_14.8dB</option>
+        <option value="p011/00060_12.9dB">p011/00060_12.9dB</option>
+        <option value="p095/00612_17.3dB">p095/00612_17.3dB</option>
+        <option value="p095/00643_0.9dB">p095/00643_0.9dB</option>
+        <option value="p012/00232_11.5dB">p012/00232_11.5dB</option>
+        <option value="p049/00524_15.3dB">p049/00524_15.3dB</option>
+        <option value="p034/00411_9.0dB">p034/00411_9.0dB</option>
+        <option value="p012/00261_-2.2dB">p012/00261_-2.2dB</option>
+        <option value="p097/00780_13.5dB">p097/00780_13.5dB</option>
+        <option value="p097/00762_5.2dB">p097/00762_5.2dB</option>
+        <option value="p034/00422_8.8dB">p034/00422_8.8dB</option>
+        <option value="p049/00483_12.1dB">p049/00483_12.1dB</option>
+        <option value="p097/00850_13.7dB">p097/00850_13.7dB</option>
+        <option value="p097/00880_2.1dB">p097/00880_2.1dB</option>
+        <option value="p034/00395_16.5dB">p034/00395_16.5dB</option>
+        <option value="p097/00781_10.5dB">p097/00781_10.5dB</option>
+        <option value="p012/00168_15.0dB">p012/00168_15.0dB</option>
+        <option value="p095/00646_7.5dB">p095/00646_7.5dB</option>
+        <option value="p011/00069_17.0dB">p011/00069_17.0dB</option>
+        <option value="p097/00815_6.3dB">p097/00815_6.3dB</option>
+        <option value="p012/00300_9.7dB">p012/00300_9.7dB</option>
+        <option value="p034/00350_11.1dB">p034/00350_11.1dB</option>
+        <option value="p097/00809_12.7dB">p097/00809_12.7dB</option>
+        <option value="p097/00864_2.2dB">p097/00864_2.2dB</option>
+        <option value="p034/00406_11.1dB">p034/00406_11.1dB</option>
+        <option value="p012/00205_2.1dB">p012/00205_2.1dB</option>
+        <option value="p012/00155_7.8dB">p012/00155_7.8dB</option>
+        <option value="p011/00128_14.2dB">p011/00128_14.2dB</option>
+        <option value="p011/00127_-0.6dB">p011/00127_-0.6dB</option>
+        <option value="p012/00225_-0.3dB">p012/00225_-0.3dB</option>
+        <option value="p012/00212_-1.1dB">p012/00212_-1.1dB</option>
+        <option value="p012/00171_8.5dB">p012/00171_8.5dB</option>
+        <option value="p049/00474_0.1dB">p049/00474_0.1dB</option>
+        <option value="p034/00336_6.1dB">p034/00336_6.1dB</option>
+        <option value="p034/00402_4.9dB">p034/00402_4.9dB</option>
+        <option value="p095/00599_12.0dB">p095/00599_12.0dB</option>
+        <option value="p095/00729_17.5dB">p095/00729_17.5dB</option>
+        <option value="p012/00243_2.4dB">p012/00243_2.4dB</option>
+        <option value="p049/00502_1.9dB">p049/00502_1.9dB</option>
+        <option value="p049/00519_-0.2dB">p049/00519_-0.2dB</option>
+        <option value="p095/00647_10.1dB">p095/00647_10.1dB</option>
+        <option value="p097/00754_11.4dB">p097/00754_11.4dB</option>
+        <option value="p011/00053_14.4dB">p011/00053_14.4dB</option>
+        <option value="p097/00838_0.7dB">p097/00838_0.7dB</option>
+        <option value="p034/00315_8.9dB">p034/00315_8.9dB</option>
+        <option value="p095/00651_14.9dB">p095/00651_14.9dB</option>
+    </select>
 </p>
 
 <p>
-Noisy: <br>
-<audio id="audioPlayerNoisy" controls>
-    <source id="audioSourceNoisy" src="/assets/audio/se/noisy/p012/00152_4.2dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    Noisy: <br>
+    <audio id="audioPlayerNoisy" controls>
+        <source id="audioSourceNoisy" src="/assets/audio/se/noisy/p012/00152_4.2dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 
 <p>
-Conv-TasNet: <br>
-<audio id="audioPlayerConvTasNet" controls>
-    <source id="audioSourceConvTasNet" src="/assets/audio/se/convtasnet/p012/00152_4.2dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    Conv-TasNet: <br>
+    <audio id="audioPlayerConvTasNet" controls>
+        <source id="audioSourceConvTasNet" src="/assets/audio/se/convtasnet/p012/00152_4.2dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 
 <p>
-CDiffuSE: <br>
-<audio id="audioPlayerCDiffuSE" controls>
-    <source id="audioSourceCDiffuSE" src="/assets/audio/se/cdiffuse/p012/00152_4.2dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
+    CDiffuSE: <br>
+    <audio id="audioPlayerCDiffuSE" controls>
+        <source id="audioSourceCDiffuSE" src="/assets/audio/se/cdiffuse/p012/00152_4.2dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
 </p>
 
 <p>
-Demucs: <br>
-<audio id="audioPlayerDemucs" controls>
-    <source id="audioSourceDemucs" src="/assets/audio/se/demucs/p012/00152_4.2dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
+    Demucs: <br>
+    <audio id="audioPlayerDemucs" controls>
+        <source id="audioSourceDemucs" src="/assets/audio/se/demucs/p012/00152_4.2dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
 </p>
 
 <p>
-SGMSE+: <br>
-<audio id="audioPlayerSGMSE" controls>
-    <source id="audioSourceSGMSE" src="/assets/audio/se/sgmse/p012/00152_4.2dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    SGMSE+: <br>
+    <audio id="audioPlayerSGMSE" controls>
+        <source id="audioSourceSGMSE" src="/assets/audio/se/sgmse/p012/00152_4.2dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 <p>
-Clean: <br>
+    Clean: <br>
     <audio id="audioPlayerClean" controls>
         <source id="audioSourceClean" src="/assets/audio/se/clean/p012/00152_4.2dB.ogg" type="audio/ogg">
         Your browser does not support the audio element.
@@ -293,7 +312,7 @@ Clean: <br>
 
         if (selectedAudio) {
             // Set the source of the source elements, not the audio players
-            audioSourceNoisy.src = "/assets/audio/se/noisy/" + selectedAudio + ".ogg"; 
+            audioSourceNoisy.src = "/assets/audio/se/noisy/" + selectedAudio + ".ogg";
             audioPlayerNoisy.load(); // Load the selected audio file using the audio player
 
             audioSourceConvTasNet.src = "/assets/audio/se/convtasnet/" + selectedAudio + ".ogg";
@@ -310,7 +329,7 @@ Clean: <br>
 
             audioSourceClean.src = "/assets/audio/se/clean/" + selectedAudio + ".ogg";
             audioPlayerClean.load(); // Load the selected audio file using the audio player
-            
+
             // This will ensure that the audio players are updating their children source elements
             // and reloading them
         }
@@ -320,13 +339,16 @@ Clean: <br>
 
 <h3>Speech Enhancement (blind test set)</h3>
 
-<p>We create a blind test set for which we only publish the noisy audio files but not the clean ground truth. It contains 743 files (2 h) from six speakers (3 male, 3 female) that are not part of the EARS dataset and noise especially recorded for this test set.</p>
+<p>We create a blind test set for which we only publish the noisy audio files but not the clean ground truth. It
+    contains 743 files (2 h) from six speakers (3 male, 3 female) that are not part of the EARS dataset and noise
+    especially recorded for this test set.</p>
 
 <h4>Results</h4>
 
 <table style="width:100%; border-collapse: collapse;">
     <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
-        <strong>Table 3: Results for the blind test.</strong> Values indicate the mean of the metrics over the test set. The best results are highlighted in bold.
+        <strong>Table 3: Results for the blind test.</strong> Values indicate the mean of the metrics over the test set.
+        The best results are highlighted in bold.
     </caption>
     <thead>
         <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
@@ -391,95 +413,96 @@ Clean: <br>
 <h4>Audio Examples</h4>
 
 <p>Select an audio file: &nbsp;&nbsp;
-<select id="audioSelectBlind" onchange="playAudioBlind()">
-<option value="00699_16.7dB">00699_16.7dB</option>
-<option value="00339_3.4dB">00339_3.4dB</option>
-<option value="00326_16.2dB">00326_16.2dB</option>
-<option value="00503_12.6dB">00503_12.6dB</option>
-<option value="00034_11.9dB">00034_11.9dB</option>
-<option value="00555_14.4dB">00555_14.4dB</option>
-<option value="00475_-1.2dB">00475_-1.2dB</option>
-<option value="00170_-0.8dB">00170_-0.8dB</option>
-<option value="00414_17.5dB">00414_17.5dB</option>
-<option value="00273_1.6dB">00273_1.6dB</option>
-<option value="00404_7.9dB">00404_7.9dB</option>
-<option value="00673_0.4dB">00673_0.4dB</option>
-<option value="00080_6.5dB">00080_6.5dB</option>
-<option value="00244_7.6dB">00244_7.6dB</option>
-<option value="00586_5.0dB">00586_5.0dB</option>
-<option value="00447_11.2dB">00447_11.2dB</option>
-<option value="00718_-1.8dB">00718_-1.8dB</option>
-<option value="00727_-1.1dB">00727_-1.1dB</option>
-<option value="00453_0.6dB">00453_0.6dB</option>
-<option value="00101_12.3dB">00101_12.3dB</option>
-<option value="00656_5.1dB">00656_5.1dB</option>
-<option value="00506_0.3dB">00506_0.3dB</option>
-<option value="00022_8.3dB">00022_8.3dB</option>
-<option value="00291_7.6dB">00291_7.6dB</option>
-<option value="00004_1.7dB">00004_1.7dB</option>
-<option value="00336_12.5dB">00336_12.5dB</option>
-<option value="00593_6.8dB">00593_6.8dB</option>
-<option value="00234_-1.0dB">00234_-1.0dB</option>
-<option value="00058_8.6dB">00058_8.6dB</option>
-<option value="00618_12.1dB">00618_12.1dB</option>
-<option value="00245_-1.7dB">00245_-1.7dB</option>
-<option value="00217_2.9dB">00217_2.9dB</option>
-<option value="00597_8.2dB">00597_8.2dB</option>
-<option value="00485_5.5dB">00485_5.5dB</option>
-<option value="00694_2.5dB">00694_2.5dB</option>
-<option value="00542_-0.6dB">00542_-0.6dB</option>
-<option value="00117_2.9dB">00117_2.9dB</option>
-<option value="00301_12.6dB">00301_12.6dB</option>
-<option value="00385_7.4dB">00385_7.4dB</option>
-<option value="00648_16.0dB">00648_16.0dB</option>
-<option value="00608_1.1dB">00608_1.1dB</option>
-<option value="00579_10.7dB">00579_10.7dB</option>
-<option value="00726_-0.1dB">00726_-0.1dB</option>
-<option value="00429_16.4dB">00429_16.4dB</option>
-<option value="00113_-0.8dB">00113_-0.8dB</option>
-<option value="00224_9.7dB">00224_9.7dB</option>
-<option value="00145_11.1dB">00145_11.1dB</option>
-<option value="00352_1.6dB">00352_1.6dB</option>
-<option value="00213_2.4dB">00213_2.4dB</option>
-<option value="00562_0.5dB">00562_0.5dB</option>
-</select></p>
-
-<p>
-Noisy: <br>
-<audio id="audioPlayerBlindNoisy" controls>
-    <source id="audioSourceBlindNoisy" src="/assets/audio/blind/noisy/00699_16.7dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    <select id="audioSelectBlind" onchange="playAudioBlind()">
+        <option value="00699_16.7dB">00699_16.7dB</option>
+        <option value="00339_3.4dB">00339_3.4dB</option>
+        <option value="00326_16.2dB">00326_16.2dB</option>
+        <option value="00503_12.6dB">00503_12.6dB</option>
+        <option value="00034_11.9dB">00034_11.9dB</option>
+        <option value="00555_14.4dB">00555_14.4dB</option>
+        <option value="00475_-1.2dB">00475_-1.2dB</option>
+        <option value="00170_-0.8dB">00170_-0.8dB</option>
+        <option value="00414_17.5dB">00414_17.5dB</option>
+        <option value="00273_1.6dB">00273_1.6dB</option>
+        <option value="00404_7.9dB">00404_7.9dB</option>
+        <option value="00673_0.4dB">00673_0.4dB</option>
+        <option value="00080_6.5dB">00080_6.5dB</option>
+        <option value="00244_7.6dB">00244_7.6dB</option>
+        <option value="00586_5.0dB">00586_5.0dB</option>
+        <option value="00447_11.2dB">00447_11.2dB</option>
+        <option value="00718_-1.8dB">00718_-1.8dB</option>
+        <option value="00727_-1.1dB">00727_-1.1dB</option>
+        <option value="00453_0.6dB">00453_0.6dB</option>
+        <option value="00101_12.3dB">00101_12.3dB</option>
+        <option value="00656_5.1dB">00656_5.1dB</option>
+        <option value="00506_0.3dB">00506_0.3dB</option>
+        <option value="00022_8.3dB">00022_8.3dB</option>
+        <option value="00291_7.6dB">00291_7.6dB</option>
+        <option value="00004_1.7dB">00004_1.7dB</option>
+        <option value="00336_12.5dB">00336_12.5dB</option>
+        <option value="00593_6.8dB">00593_6.8dB</option>
+        <option value="00234_-1.0dB">00234_-1.0dB</option>
+        <option value="00058_8.6dB">00058_8.6dB</option>
+        <option value="00618_12.1dB">00618_12.1dB</option>
+        <option value="00245_-1.7dB">00245_-1.7dB</option>
+        <option value="00217_2.9dB">00217_2.9dB</option>
+        <option value="00597_8.2dB">00597_8.2dB</option>
+        <option value="00485_5.5dB">00485_5.5dB</option>
+        <option value="00694_2.5dB">00694_2.5dB</option>
+        <option value="00542_-0.6dB">00542_-0.6dB</option>
+        <option value="00117_2.9dB">00117_2.9dB</option>
+        <option value="00301_12.6dB">00301_12.6dB</option>
+        <option value="00385_7.4dB">00385_7.4dB</option>
+        <option value="00648_16.0dB">00648_16.0dB</option>
+        <option value="00608_1.1dB">00608_1.1dB</option>
+        <option value="00579_10.7dB">00579_10.7dB</option>
+        <option value="00726_-0.1dB">00726_-0.1dB</option>
+        <option value="00429_16.4dB">00429_16.4dB</option>
+        <option value="00113_-0.8dB">00113_-0.8dB</option>
+        <option value="00224_9.7dB">00224_9.7dB</option>
+        <option value="00145_11.1dB">00145_11.1dB</option>
+        <option value="00352_1.6dB">00352_1.6dB</option>
+        <option value="00213_2.4dB">00213_2.4dB</option>
+        <option value="00562_0.5dB">00562_0.5dB</option>
+    </select>
 </p>
 
 <p>
-Conv-TasNet: <br>
-<audio id="audioPlayerBlindConvTasNet" controls>
-    <source id="audioSourceBlindConvTasNet" src="/assets/audio/blind/convtasnet/00699_16.7dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    Noisy: <br>
+    <audio id="audioPlayerBlindNoisy" controls>
+        <source id="audioSourceBlindNoisy" src="/assets/audio/blind/noisy/00699_16.7dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 
 <p>
-CDiffuSE: <br>
-<audio id="audioPlayerBlindCDiffuSE" controls>
-    <source id="audioSourceBlindCDiffuSE" src="/assets/audio/blind/cdiffuse/00699_16.7dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
+    Conv-TasNet: <br>
+    <audio id="audioPlayerBlindConvTasNet" controls>
+        <source id="audioSourceBlindConvTasNet" src="/assets/audio/blind/convtasnet/00699_16.7dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 
 <p>
-Demucs: <br>
-<audio id="audioPlayerBlindDemucs" controls>
-    <source id="audioSourceBlindDemucs" src="/assets/audio/blind/demucs/00699_16.7dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
+    CDiffuSE: <br>
+    <audio id="audioPlayerBlindCDiffuSE" controls>
+        <source id="audioSourceBlindCDiffuSE" src="/assets/audio/blind/cdiffuse/00699_16.7dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
 </p>
 
 <p>
-SGMSE+: <br>
-<audio id="audioPlayerBlindSGMSE" controls>
-    <source id="audioSourceBlindSGMSE" src="/assets/audio/blind/sgmse/00699_16.7dB.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    Demucs: <br>
+    <audio id="audioPlayerBlindDemucs" controls>
+        <source id="audioSourceBlindDemucs" src="/assets/audio/blind/demucs/00699_16.7dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+</p>
+
+<p>
+    SGMSE+: <br>
+    <audio id="audioPlayerBlindSGMSE" controls>
+        <source id="audioSourceBlindSGMSE" src="/assets/audio/blind/sgmse/00699_16.7dB.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 
 <script>
@@ -498,7 +521,7 @@ SGMSE+: <br>
 
         if (selectedAudioBlind) {
             // Set the source of the source elements, not the audio players
-            audioSourceBlindNoisy.src = "/assets/audio/blind/noisy/" + selectedAudioBlind + ".ogg"; 
+            audioSourceBlindNoisy.src = "/assets/audio/blind/noisy/" + selectedAudioBlind + ".ogg";
             audioPlayerBlindNoisy.load(); // Load the selected audio file using the audio player
 
             audioSourceBlindConvTasNet.src = "/assets/audio/blind/convtasnet/" + selectedAudioBlind + ".ogg";
@@ -512,24 +535,26 @@ SGMSE+: <br>
 
             audioSourceBlindSGMSE.src = "/assets/audio/blind/sgmse/" + selectedAudioBlind + ".ogg";
             audioPlayerBlindSGMSE.load(); // Load the selected audio file using the audio player
-            
+
             // This will ensure that the audio players are updating their children source elements
             // and reloading them
         }
     }
 </script>
 <br>
-  
+
 <h3>Dereverberation (EARS-Reverb)</h3>
 
-<p>For the task of dereverberation, we use real recorded room impulse responses (RIRs) from multiple public datasets [16, 17, 18, 19, 20, 21, 22]. We generate reverberant speech by convolving the clean
+<p>For the task of dereverberation, we use real recorded room impulse responses (RIRs) from multiple public datasets
+    [16, 17, 18, 19, 20, 21, 22]. We generate reverberant speech by convolving the clean
     speech with the RIR. More details can be found in the <a href="">paper</a>.</p>
 
 <h4>Results</h4>
 
 <table style="width:100%; border-collapse: collapse;">
     <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
-        <strong>Table 4: Results on EARS-Reverb.</strong> Values indicate the mean of the metrics over the test set. The best results are highlighted in bold.
+        <strong>Table 4: Results on EARS-Reverb.</strong> Values indicate the mean of the metrics over the test set. The
+        best results are highlighted in bold.
     </caption>
     <thead>
         <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
@@ -571,81 +596,81 @@ SGMSE+: <br>
 
 <p>
     Select an audio file: &nbsp;&nbsp;
-<select id="audioSelectReverb" onchange="playAudioReverb()">
-    <option value="p012/00258_0.19">p012/00258_0.19</option>
-    <option value="p095/00709_0.46">p095/00709_0.46</option>
-    <option value="p011/00043_0.26">p011/00043_0.26</option>
-    <option value="p011/00080_0.60">p011/00080_0.60</option>
-    <option value="p049/00550_0.56">p049/00550_0.56</option>
-    <option value="p011/00116_0.18">p011/00116_0.18</option>
-    <option value="p095/00713_0.25">p095/00713_0.25</option>
-    <option value="p095/00651_0.77">p095/00651_0.77</option>
-    <option value="p012/00259_0.24">p012/00259_0.24</option>
-    <option value="p049/00570_0.69">p049/00570_0.69</option>
-    <option value="p034/00412_0.66">p034/00412_0.66</option>
-    <option value="p012/00220_10.49">p012/00220_10.49</option>
-    <option value="p097/00810_0.99">p097/00810_0.99</option>
-    <option value="p097/00849_1.62">p097/00849_1.62</option>
-    <option value="p034/00403_1.27">p034/00403_1.27</option>
-    <option value="p049/00495_1.00">p049/00495_1.00</option>
-    <option value="p097/00878_33.15">p097/00878_33.15</option>
-    <option value="p097/00845_0.36">p097/00845_0.36</option>
-    <option value="p034/00350_4.27">p034/00350_4.27</option>
-    <option value="p097/00764_0.50">p097/00764_0.50</option>
-    <option value="p012/00296_6.01">p012/00296_6.01</option>
-    <option value="p095/00623_0.38">p095/00623_0.38</option>
-    <option value="p011/00045_0.30">p011/00045_0.30</option>
-    <option value="p097/00869_0.23">p097/00869_0.23</option>
-    <option value="p012/00204_0.84">p012/00204_0.84</option>
-    <option value="p034/00397_0.65">p034/00397_0.65</option>
-    <option value="p097/00781_0.21">p097/00781_0.21</option>
-    <option value="p097/00864_0.20">p097/00864_0.20</option>
-    <option value="p034/00421_0.21">p034/00421_0.21</option>
-    <option value="p012/00189_0.41">p012/00189_0.41</option>
-    <option value="p012/00246_0.55">p012/00246_0.55</option>
-    <option value="p011/00067_0.36">p011/00067_0.36</option>
-    <option value="p011/00079_0.22">p011/00079_0.22</option>
-    <option value="p012/00151_0.57">p012/00151_0.57</option>
-    <option value="p012/00254_0.60">p012/00254_0.60</option>
-    <option value="p012/00275_0.32">p012/00275_0.32</option>
-    <option value="p049/00560_0.70">p049/00560_0.70</option>
-    <option value="p034/00407_0.53">p034/00407_0.53</option>
-    <option value="p034/00306_0.26">p034/00306_0.26</option>
-    <option value="p095/00634_0.37">p095/00634_0.37</option>
-    <option value="p095/00714_0.63">p095/00714_0.63</option>
-    <option value="p012/00282_0.48">p012/00282_0.48</option>
-    <option value="p049/00533_0.65">p049/00533_0.65</option>
-    <option value="p049/00487_0.90">p049/00487_0.90</option>
-    <option value="p095/00660_0.88">p095/00660_0.88</option>
-    <option value="p097/00814_0.86">p097/00814_0.86</option>
-    <option value="p011/00004_0.42">p011/00004_0.42</option>
-    <option value="p097/00892_0.59">p097/00892_0.59</option>
-    <option value="p034/00378_0.26">p034/00378_0.26</option>
-    <option value="p095/00681_0.97">p095/00681_0.97</option>
-</select>
+    <select id="audioSelectReverb" onchange="playAudioReverb()">
+        <option value="p012/00258_0.19">p012/00258_0.19</option>
+        <option value="p095/00709_0.46">p095/00709_0.46</option>
+        <option value="p011/00043_0.26">p011/00043_0.26</option>
+        <option value="p011/00080_0.60">p011/00080_0.60</option>
+        <option value="p049/00550_0.56">p049/00550_0.56</option>
+        <option value="p011/00116_0.18">p011/00116_0.18</option>
+        <option value="p095/00713_0.25">p095/00713_0.25</option>
+        <option value="p095/00651_0.77">p095/00651_0.77</option>
+        <option value="p012/00259_0.24">p012/00259_0.24</option>
+        <option value="p049/00570_0.69">p049/00570_0.69</option>
+        <option value="p034/00412_0.66">p034/00412_0.66</option>
+        <option value="p012/00220_10.49">p012/00220_10.49</option>
+        <option value="p097/00810_0.99">p097/00810_0.99</option>
+        <option value="p097/00849_1.62">p097/00849_1.62</option>
+        <option value="p034/00403_1.27">p034/00403_1.27</option>
+        <option value="p049/00495_1.00">p049/00495_1.00</option>
+        <option value="p097/00878_33.15">p097/00878_33.15</option>
+        <option value="p097/00845_0.36">p097/00845_0.36</option>
+        <option value="p034/00350_4.27">p034/00350_4.27</option>
+        <option value="p097/00764_0.50">p097/00764_0.50</option>
+        <option value="p012/00296_6.01">p012/00296_6.01</option>
+        <option value="p095/00623_0.38">p095/00623_0.38</option>
+        <option value="p011/00045_0.30">p011/00045_0.30</option>
+        <option value="p097/00869_0.23">p097/00869_0.23</option>
+        <option value="p012/00204_0.84">p012/00204_0.84</option>
+        <option value="p034/00397_0.65">p034/00397_0.65</option>
+        <option value="p097/00781_0.21">p097/00781_0.21</option>
+        <option value="p097/00864_0.20">p097/00864_0.20</option>
+        <option value="p034/00421_0.21">p034/00421_0.21</option>
+        <option value="p012/00189_0.41">p012/00189_0.41</option>
+        <option value="p012/00246_0.55">p012/00246_0.55</option>
+        <option value="p011/00067_0.36">p011/00067_0.36</option>
+        <option value="p011/00079_0.22">p011/00079_0.22</option>
+        <option value="p012/00151_0.57">p012/00151_0.57</option>
+        <option value="p012/00254_0.60">p012/00254_0.60</option>
+        <option value="p012/00275_0.32">p012/00275_0.32</option>
+        <option value="p049/00560_0.70">p049/00560_0.70</option>
+        <option value="p034/00407_0.53">p034/00407_0.53</option>
+        <option value="p034/00306_0.26">p034/00306_0.26</option>
+        <option value="p095/00634_0.37">p095/00634_0.37</option>
+        <option value="p095/00714_0.63">p095/00714_0.63</option>
+        <option value="p012/00282_0.48">p012/00282_0.48</option>
+        <option value="p049/00533_0.65">p049/00533_0.65</option>
+        <option value="p049/00487_0.90">p049/00487_0.90</option>
+        <option value="p095/00660_0.88">p095/00660_0.88</option>
+        <option value="p097/00814_0.86">p097/00814_0.86</option>
+        <option value="p011/00004_0.42">p011/00004_0.42</option>
+        <option value="p097/00892_0.59">p097/00892_0.59</option>
+        <option value="p034/00378_0.26">p034/00378_0.26</option>
+        <option value="p095/00681_0.97">p095/00681_0.97</option>
+    </select>
 </p>
 
 <p>
-Reverberant: <br>
-<audio id="audioPlayerReverb" controls>
-    <source id="audioSourceReverb" src="/assets/audio/derev/noisy/p012/00258_0.19.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    Reverberant: <br>
+    <audio id="audioPlayerReverb" controls>
+        <source id="audioSourceReverb" src="/assets/audio/derev/noisy/p012/00258_0.19.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 
 <p>
-SGMSE+: <br>
-<audio id="audioPlayerReverbSGMSE" controls>
-    <source id="audioSourceReverbSGMSE" src="/assets/audio/derev/sgmse/p012/00258_0.19.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    SGMSE+: <br>
+    <audio id="audioPlayerReverbSGMSE" controls>
+        <source id="audioSourceReverbSGMSE" src="/assets/audio/derev/sgmse/p012/00258_0.19.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 <p>
-Clean: <br>
-<audio id="audioPlayerReverbClean" controls>
-    <source id="audioSourceReverbClean" src="/assets/audio/derev/clean/p012/00258_0.19.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
+    Clean: <br>
+    <audio id="audioPlayerReverbClean" controls>
+        <source id="audioSourceReverbClean" src="/assets/audio/derev/clean/p012/00258_0.19.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </p>
 
 <script>
@@ -660,7 +685,7 @@ Clean: <br>
 
         if (selectedAudioReverb) {
             // Set the source of the source elements, not the audio players
-            audioSourceReverb.src = "/assets/audio/derev/noisy/" + selectedAudioReverb + ".ogg"; 
+            audioSourceReverb.src = "/assets/audio/derev/noisy/" + selectedAudioReverb + ".ogg";
             audioPlayerReverb.load(); // Load the selected audio file using the audio player
 
             audioSourceReverbSGMSE.src = "/assets/audio/derev/sgmse/" + selectedAudioReverb + ".ogg";
@@ -668,7 +693,7 @@ Clean: <br>
 
             audioSourceReverbClean.src = "/assets/audio/derev/clean/" + selectedAudioReverb + ".ogg";
             audioPlayerReverbClean.load(); // Load the selected audio file using the audio player
-            
+
             // This will ensure that the audio players are updating their children source elements
             // and reloading them
         }
@@ -684,7 +709,7 @@ Clean: <br>
 </ol>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const references = {
             "librivox": "H. Dubey, A. Aazami, V. Gopal, B. Naderi, S. Braun, R. Cutler, H. Gamper, M. Golestaneh, and R. Aichner, “ICASSP 2023 deep noise suppression challenge,” in IEEE International Conference on Acoustics, Speech and Signal Processing, 2023.",
             "librispeech": "V. Panayotov, G. Chen, D. Povey, and S. Khudanpur, “Librispeech: An ASR corpus based on public domain audio books,” in IEEE International Conference on Acoustics, Speech and Signal Processing, 2015, pp. 5206–5210.",
@@ -719,7 +744,14 @@ Clean: <br>
                 sortedReferences[key] = references[key];
             }
         });
-    
+
+        function changeId(element) {
+            // Change the id of the clicked element to the next one
+            key = element.id.split('-')[1];
+            elem = document.getElementById(`link-${key}`);
+            elem.href = `#${element.id}`;
+        }
+
         const refList = document.getElementById('refList');
         const refTotal = Object.keys(sortedReferences).length;
         const maxWidth = `${Math.ceil(Math.log10(refTotal + 1)) * 10 + 5}px`;
@@ -740,7 +772,8 @@ Clean: <br>
             numberSpan.style.whiteSpace = 'nowrap';
 
             const numberLink = document.createElement('a');
-            numberLink.href = `#cite-${key}-0`; // Assuming the first instance is what we want to link back to
+            numberLink.href = `#cite-${key}-0`; 
+            numberLink.id = `link-${key}`;
             numberLink.textContent = `[${refNumber}]`;
             numberLink.style.textDecoration = 'none';
             numberSpan.appendChild(numberLink);
@@ -753,6 +786,7 @@ Clean: <br>
             refList.appendChild(li);
         });
 
+        referenceCounter = {};
         // Making In-text references linkable and combine multiple references
         document.querySelectorAll('.reference').forEach(span => {
             const keys = span.getAttribute('data-ref').split(' ');
@@ -760,11 +794,16 @@ Clean: <br>
                 const index = Object.keys(sortedReferences).indexOf(key);
                 return index + 1;
             });
-            refText = `[${refNumbers.join(', ')}]`;
             keys.forEach((key, i) => {
+                if (referenceCounter[key] >= 0) {
+                    referenceCounter[key]++;
+                } else {
+                    referenceCounter[key] = 0;
+                }
+
                 // Set up string if there are multiple references
-                if (keys.length > 1 ) {
-                    if (i === 0 ) {
+                if (keys.length > 1) {
+                    if (i === 0) {
                         refText = `[${refNumbers[i]}, `;
                     } else if (i === keys.length - 1) {
                         refText = `${refNumbers[i]}]`;
@@ -774,13 +813,18 @@ Clean: <br>
                 // Set up string if there is only one reference
                 } else {
                     refText = `[${refNumbers[i]}]`;
-                    }
-                const citeId = `cite-${key}-0`; 
+                }
+
+                const citeId = `cite-${key}-${referenceCounter[key]}`;
                 const citeLink = document.createElement('a');
                 citeLink.href = `#ref-${refNumbers[i]}`;
                 citeLink.textContent = refText;
                 citeLink.id = citeId;
                 citeLink.style.textDecoration = 'none';
+                citeLink.addEventListener('click', function () {
+                    changeId(this);
+                });
+
                 span.appendChild(citeLink);
             });
         });
