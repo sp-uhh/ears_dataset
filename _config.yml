@@ -23,8 +23,9 @@ logo: /assets/img/ears_logo.png
 email: julius.richter@uni-hamburg.de
 description: >- # this means to ignore newlines until "baseurl:"
   An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+domain: sp-uhh.github.io
+baseurl: "/ears_dataset/" # the subpath of your site, e.g. /blog
+url: "https://sp-uhh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: JuliusRichter13
 github_username:  julius-richter
 
