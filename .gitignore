@@ -4,4 +4,5 @@ _layouts
 .jekyll-cache
 .jekyll-metadata
 vendor
+Gemfile.lock
 _site/assets
