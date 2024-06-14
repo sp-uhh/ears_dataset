@@ -12,9 +12,25 @@ layout: default
         padding: 10px;
         overflow: auto;
         border-radius: 4px;
+        position: relative;
     }
     code {
         font-family: monospace;
+    }
+    .copy-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+    .copy-button:hover {
+        background: #0056b3;
     }
 </style>
 
@@ -691,13 +707,26 @@ If you use the dataset or any derivative of it, please cite our <a href="https:/
 </p>
 
 <p>
-<pre><code>{% raw %}@inproceedings{richter2024ears,
+<pre><code id="bibtex-entry">{% raw %}@inproceedings{richter2024ears,
   title={{EARS}: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation},
   author={Richter, Julius and Wu, Yi-Chiao and Krenn, Steven and Welker, Simon and Lay, Bunlong and Watanabe, Shinjii and Richard, Alexander and Gerkmann, Timo},
   booktitle={Interspeech},
   year={2024}{% endraw %}
-}</code></pre>
+}</code></pre><button class="copy-button" onclick="copyToClipboard()">Copy</button>
 </p>
+
+<script>
+    function copyToClipboard() {
+        const codeElement = document.getElementById('bibtex-entry');
+        const textarea = document.createElement('textarea');
+        textarea.value = codeElement.textContent;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Copied to clipboard!');
+    }
+</script>
 
 <h2>References</h2>
 
