@@ -17,7 +17,7 @@ If you use the dataset or any derivative of it, please cite our [research paper]
 
 The dataset is available for download from [https://github.com/facebookresearch/ears_dataset](https://github.com/facebookresearch/ears_dataset).
 
-The EARS-WHAM and EARS-Reverb dataset are available for download from [https://github.com/sp-uhh/ears_benchmark](https://github.com/sp-uhh/ears_benchmark).
+The EARS-WHAM and EARS-Reverb datasets are available for download from [https://github.com/sp-uhh/ears_benchmark](https://github.com/sp-uhh/ears_benchmark).
 
 # Audio examples
 
