@@ -35,22 +35,22 @@ layout: default
 
 <h1>EARS: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation</h1>
 
-<div>Julius Richter, Yi-Chiao Wu, Steven Krenn, Simon Welker, Bunlong Lay, Shinji Watanabe, Alexander Richard, Timo Gerkmann</div>
+<p>Julius Richter, Yi-Chiao Wu, Steven Krenn, Simon Welker, Bunlong Lay, Shinji Watanabe, Alexander Richard, Timo Gerkmann</p>
 
 <h2>Abstract</h2>
 
-<div>We release the EARS (<b>E</b>xpressive <b>A</b>nechoic <b>R</b>ecordings of <b>S</b>peech) dataset, a high-quality
+<p>We release the EARS (<b>E</b>xpressive <b>A</b>nechoic <b>R</b>ecordings of <b>S</b>peech) dataset, a high-quality
     speech dataset comprising 107 speakers from diverse backgrounds, totalling in more than 100 hours of clean, anechoic
     speech data. The dataset covers a large range of different speaking styles, including emotional speech, different
     reading styles, non-verbal sounds, and conversational freeform speech. We benchmark various methods for speech
     enhancement and dereverberation on the dataset and evaluate their performance through a set of instrumental metrics.
     In addition, we conduct a listening test with 20 participants for the speech enhancement task, where a generative
     method is preferred. We introduce a blind test set that allows for automatic online evaluation of uploaded data.
-    Dataset download links and automatic evaluation server can be found online.</div>
+    Dataset download links and automatic evaluation server can be found online.</p>
 
 <h2>EARS Dataset</h2>
 
-<div>The EARS dataset is characterized by its scale, diversity, and high recording quality. In Table 1, we list characteristics of the EARS dataset in comparison to other speech datasets. </div>
+<p>The EARS dataset is characterized by its scale, diversity, and high recording quality. In Table 1, we list characteristics of the EARS dataset in comparison to other speech datasets. </p>
 
 <table style="width:100%; border-collapse: collapse;">
     <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
@@ -111,13 +111,13 @@ layout: default
     </tbody>
 </table>
 
-<div>EARS contains 100 h of anechoic speech recordings at 48 kHz from over 100 English speakers with high demographic diversity. The dataset spans the full range of human speech, including reading tasks in seven different reading styles, emotional reading and freeform speech in 22 different emotions, conversational speech, and non-verbal sounds like laughter or coughing. Reading tasks feature seven styles (regular, loud, whisper, fast, slow, high pitch, and low pitch). Additionally, the dataset features unconstrained freeform speech and speech in 22 different emotional styles. We provide transcriptions of the reading portion and meta-data of the speakers (gender, age, race, first language).</div>
+<p>EARS contains 100 h of anechoic speech recordings at 48 kHz from over 100 English speakers with high demographic diversity. The dataset spans the full range of human speech, including reading tasks in seven different reading styles, emotional reading and freeform speech in 22 different emotions, conversational speech, and non-verbal sounds like laughter or coughing. Reading tasks feature seven styles (regular, loud, whisper, fast, slow, high pitch, and low pitch). Additionally, the dataset features unconstrained freeform speech and speech in 22 different emotional styles. We provide transcriptions of the reading portion and meta-data of the speakers (gender, age, race, first language).</p>
 
 <h3>Audio Examples</h3>
 
-<div>Here we present a few audio examples from the EARS dataset. </div>
+<p>Here we present a few audio examples from the EARS dataset. </p>
 
-<div>
+<p>
 p002/emo_adoration_sentences.wav<br>
 <audio controls>
   <source src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears/p002_emo_adoration_sentences.wav" type="audio/wav">
@@ -193,22 +193,22 @@ p020/freeform_speech_01.wav<br>
     <source src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears/p020_freeform_speech_01.wav" type="audio/wav">
     Your browser does not support the audio element.
 </audio>
-</div>
+</p>
 
 <br>
 
 <h2>Benchmarks</h2>
 
-<div>The EARS dataset enables various speech processing tasks to be evaluated in a controlled and comparable way. Here, we
-    present benchmarks for speech enhancement and dereverberation tasks.</div>
+<p>The EARS dataset enables various speech processing tasks to be evaluated in a controlled and comparable way. Here, we
+    present benchmarks for speech enhancement and dereverberation tasks.</p>
 
 <br>
 
 <h3>EARS-WHAM</h3>
 
-<div>For the task of speech enhancement, we construct the EARS-WHAM dataset, which mixes speech from the EARS dataset with
+<p>For the task of speech enhancement, we construct the EARS-WHAM dataset, which mixes speech from the EARS dataset with
     real noise recordings from the WHAM! dataset <span class="reference" data-ref="wham"></span>. More details can be
-    found in the <a href="https://arxiv.org/abs/2406.06185" target="_blank">paper</a>.</div>
+    found in the <a href="https://arxiv.org/abs/2406.06185" target="_blank">paper</a>.</p>
 
 <h4>Results</h4>
 
@@ -273,9 +273,9 @@ p020/freeform_speech_01.wav<br>
 
 <h4>Audio Examples</h4>
 
-<div>Here we present audio examples for the speech enhancement task. Below we show the noisy input, processed files for Conv-TasNet <span class="reference" data-ref="convtasnet"></span>, CDiffuSE <span class="reference" data-ref="cdiffuse"></span>, Demucs <span class="reference" data-ref="demucs"></span>, SGMSE+ <span class="reference" data-ref="sgmse"></span>, and the clean ground truth.</div>
+<p>Here we present audio examples for the speech enhancement task. Below we show the noisy input, processed files for Conv-TasNet <span class="reference" data-ref="convtasnet"></span>, CDiffuSE <span class="reference" data-ref="cdiffuse"></span>, Demucs <span class="reference" data-ref="demucs"></span>, SGMSE+ <span class="reference" data-ref="sgmse"></span>, and the clean ground truth.</p>
 
-<div>Select an audio file: &nbsp;&nbsp;
+<p>Select an audio file: &nbsp;&nbsp;
     <select id="audioSelect" onchange="playAudio()">
         <option value="p102/00252_4.9dB">p102/00252_4.9dB</option>
     <option value="p103/00464_11.8dB">p103/00464_11.8dB</option>
@@ -308,9 +308,9 @@ p020/freeform_speech_01.wav<br>
     <option value="p106/00039_3.5dB">p106/00039_3.5dB</option>
     <option value="p107/00173_5.9dB">p107/00173_5.9dB</option>
     </select>
-</div>
+</p>
 
-<div>
+<p>
     Noisy: <br>
     <audio id="audioPlayerNoisy" controls>
         <source id="audioSourceNoisy" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/noisy/p102/00252_4.9dB.wav" type="audio/wav">
@@ -346,7 +346,7 @@ p020/freeform_speech_01.wav<br>
         <source id="audioSourceClean" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/clean/p102/00252_4.9dB.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
-</div>
+</p>
 
 <script>
     function playAudio() {
@@ -393,9 +393,9 @@ p020/freeform_speech_01.wav<br>
 
 <h3>Blind test set</h3>
 
-<div>We create a blind test set for which we only publish the noisy audio files but not the clean ground truth. It
+<p>We create a blind test set for which we only publish the noisy audio files but not the clean ground truth. It
     contains 743 files (2 h) from six speakers (3 male, 3 female) that are not part of the EARS dataset and noise
-    especially recorded for this test set.</div>
+    especially recorded for this test set.</p>
 
 <h4>Results</h4>
 
@@ -462,7 +462,7 @@ p020/freeform_speech_01.wav<br>
 
 Here we present audio examples for the blind test set. Below we show the noisy input, processed files for Conv-TasNet <span class="reference" data-ref="convtasnet"></span>, CDiffuSE <span class="reference" data-ref="cdiffuse"></span>, Demucs <span class="reference" data-ref="demucs"></span>, and SGMSE+ <span class="reference" data-ref="sgmse"></span>.
 
-<div>Select an audio file: &nbsp;&nbsp;
+<p>Select an audio file: &nbsp;&nbsp;
     <select id="audioSelectBlind" onchange="playAudioBlind()">
         <option value="00620">00620</option>
         <option value="00377">00377</option>
@@ -495,9 +495,9 @@ Here we present audio examples for the blind test set. Below we show the noisy i
         <option value="00282">00282</option>
         <option value="00613">00613</option>
     </select>
-</div>
+</p>
 
-<div>
+<p>
     Noisy: <br>
     <audio id="audioPlayerBlindNoisy" controls>
         <source id="audioSourceBlindNoisy" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-blind/noisy/00620.wav" type="audio/wav">
@@ -527,7 +527,7 @@ Here we present audio examples for the blind test set. Below we show the noisy i
         <source id="audioSourceBlindSGMSE" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-blind/sgmse/00620.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
-</div>
+</p>
 
 <script>
     function playAudioBlind() {
@@ -569,7 +569,7 @@ Here we present audio examples for the blind test set. Below we show the noisy i
 
 <h3>Evaluation on real-world data</h3>
 
-<div>This demo showcases the denoising capabilities of SGMSE+ <span class="reference" data-ref="sgmse"></span> trained using the EARS-WHAM dataset. The red frame represents the noisy input audio, while the green frame indicates the enhanced, noise-reduced output.</div>
+<p>This demo showcases the denoising capabilities of SGMSE+ <span class="reference" data-ref="sgmse"></span> trained using the EARS-WHAM dataset. The red frame represents the noisy input audio, while the green frame indicates the enhanced, noise-reduced output.</p>
 
 <div class="video-container">
     <iframe src="https://www.youtube.com/embed/H5FiO0JxPK4" frameborder="0" allowfullscreen></iframe>
@@ -580,9 +580,9 @@ Here we present audio examples for the blind test set. Below we show the noisy i
 
 <h3>Dereverberation (EARS-Reverb)</h3>
 
-<div>For the task of dereverberation, we use real recorded room impulse responses (RIRs) from multiple public datasets
+<p>For the task of dereverberation, we use real recorded room impulse responses (RIRs) from multiple public datasets
     <span class="reference" data-ref="ace air arni brudex dechorate detmoldsrir palimpsest"></span>. We generate reverberant speech by convolving the clean
-    speech with the RIR. More details can be found in the <a href="https://arxiv.org/abs/2406.06185" target="_blank">paper</a>.</div>
+    speech with the RIR. More details can be found in the <a href="https://arxiv.org/abs/2406.06185" target="_blank">paper</a>.</p>
 
 <h4>Results</h4>
 
@@ -623,9 +623,9 @@ Here we present audio examples for the blind test set. Below we show the noisy i
 
 <h4>Audio Examples</h4>
 
-<div>Here we present audio examples for the dereverberation task. Below we show the reverberant input, processed files for SGMSE+, and the clean ground truth.</div>
+<p>Here we present audio examples for the dereverberation task. Below we show the reverberant input, processed files for SGMSE+, and the clean ground truth.</p>
 
-<div>
+<p>
     Select an audio file: &nbsp;&nbsp;
     <select id="audioSelectReverb" onchange="playAudioReverb()">
         <option value="p102/00142_0.76">p102/00142_0.76</option>
@@ -659,9 +659,9 @@ Here we present audio examples for the blind test set. Below we show the noisy i
         <option value="p106/00683_0.54">p106/00683_0.54</option>
         <option value="p107/00792_0.86">p107/00792_0.86</option>
     </select>
-</div>
+</p>
 
-<div>
+<p>
     Reverberant: <br>
     <audio id="audioPlayerReverb" controls>
         <source id="audioSourceReverb" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-reverb/noisy/p102/00142_0.76.wav" type="audio/wav">
@@ -679,7 +679,7 @@ Here we present audio examples for the blind test set. Below we show the noisy i
         <source id="audioSourceReverbClean" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-reverb/clean/p102/00142_0.76.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
-</div>
+</p>
 
 <script>
     function playAudioReverb() {
@@ -712,18 +712,18 @@ Here we present audio examples for the blind test set. Below we show the noisy i
 
 <h2 id="citation">Citation</h2>
 
-<div>
+<p>
 If you use the dataset or any derivative of it, please cite our <a href="https://arxiv.org/abs/2406.06185" target="_blank">research paper</a>: 
-</div>
+</p>
 
-<div>
+<p>
 <pre><code>{% raw %}@inproceedings{richter2024ears,
   title={{EARS}: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation},
   author={Richter, Julius and Wu, Yi-Chiao and Krenn, Steven and Welker, Simon and Lay, Bunlong and Watanabe, Shinjii and Richard, Alexander and Gerkmann, Timo},
   booktitle={Interspeech},
   year={2024}{% endraw %}
 }</code></pre>
-</div>
+</p>
 
 <h2>References</h2>
 
