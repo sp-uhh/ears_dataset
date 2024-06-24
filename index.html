@@ -859,15 +859,6 @@ layout: default
     <a href="https://arxiv.org/abs/2406.06185" target="_blank">research paper</a>: 
 </p>
 
-<!-- <p>
-<pre><code>{% raw %}@inproceedings{richter2024ears,
-  title={{EARS}: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation},
-  author={Richter, Julius and Wu, Yi-Chiao and Krenn, Steven and Welker, Simon and Lay, Bunlong and Watanabe, Shinjii and Richard, Alexander and Gerkmann, Timo},
-  booktitle={Interspeech},
-  year={2024}
-}{% endraw %}
-</code></pre>
-</p> -->
 
 <div class="container">
     <div dir="auto" data-snippet-clipboard-copy-content="@inproceedings{richter2024ears,
@@ -898,25 +889,14 @@ layout: default
 
 <script>
     document.getElementById('copyButton').addEventListener('click', function() {
-        // Locate the element with the text to copy
-        var textToCopy = document.querySelector('.highlight[data-snippet-clipboard-copy-content]').textContent;
-        
-        // Create a temporary text area to hold the text for copying
-        var tempTextArea = document.createElement('textarea');
-        tempTextArea.value = textToCopy;
-        document.body.appendChild(tempTextArea);
-        tempTextArea.select();
-
-        try {
-            document.execCommand('copy');
-        } catch (err) {
-            console.error('Unable to copy text: ', err);
-        }
-        
-        // Remove the temporary text area
-        document.body.removeChild(tempTextArea);
+        const codeContent = document.querySelector('div[data-snippet-clipboard-copy-content]').getAttribute('data-snippet-clipboard-copy-content');
+        navigator.clipboard.writeText(codeContent).then(function() {
+            alert('Copied to clipboard!');
+        }, function() {
+            alert('Failed to copy!');
+        });
     });
-</script>
+    </script>
 
 
 <h2>
