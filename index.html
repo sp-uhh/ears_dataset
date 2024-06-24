@@ -39,17 +39,76 @@ layout: default
        border-collapse: collapse;
        overflow-x: auto;
    }
-   th, td {
-       padding: 8px;
-       text-align: left;
-       border: 1px solid #ddd;
-   }
     html, body {
         margin: 5px; /* Get rid of default margins */
         padding: 5px; /* Get rid of default padding */
         overflow-x: hidden; /* Prevent horizontal overflow */
     }
-   
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border: 1px solid #ddd;
+        font-size: 1em; /* Base font size */
+    }
+
+    /* Responsive Container - wrap tables in this container */
+    .table-responsive {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    /* Make Table Headers Sticky */
+    thead th {
+        position: -webkit-sticky; /* for Safari */
+        position: sticky;
+        top: 0;
+        background: #f9f9f9;
+    }
+
+    /* Responsive Styling for Smaller Screens */
+    @media screen and (max-width: 1024px) {
+        th, td {
+            font-size: 0.9em; /* Slightly reduce font size */
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        th, td {
+            font-size: 0.8em; /* Further reduce font size */
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        table {
+            display: block;
+        }
+        thead, tbody, th, td, tr {
+            display: block;
+        }
+
+        thead tr {
+            display: none;
+        }
+        td {
+            position: relative;
+            padding-left: 50%;
+            text-align: right;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.75em; /* Reduce font size for very small screens */
+        }   
+        td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 0;
+            width: 50%;
+            padding-left: 15px;
+            font-weight: bold;
+            text-align: left;
+            font-size: 0.75em; /* Match the font size of the content */
+        }
+    }
 </style>
 
 <h1>EARS: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation</h1>
