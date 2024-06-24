@@ -865,7 +865,7 @@ layout: default
 
 
 <div class="container">
-    <div dir="auto" data-snippet-clipboard-copy-content="test">
+    <div dir="auto" data-snippet-clipboard-copy-content="{% raw %}test{% endraw %}">
 <pre><code>{% raw %}@inproceedings{richter2024ears,
     title={{EARS}: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation},
     author={Richter, Julius and Wu, Yi-Chiao and Krenn, Steven and Welker, Simon and Lay, Bunlong and Watanabe, Shinjii and Richard, Alexander and Gerkmann, Timo},
@@ -885,7 +885,6 @@ layout: default
     document.getElementById('copyButton').addEventListener('click', function() {
         const codeContent = document.querySelector('div[data-snippet-clipboard-copy-content]').getAttribute('data-snippet-clipboard-copy-content');
         navigator.clipboard.writeText(codeContent).then(function() {
-            alert('Copied to clipboard!');
         }, function() {
             alert('Failed to copy!');
         });
