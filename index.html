@@ -64,7 +64,18 @@ layout: default
     .left-align {
         text-align: left;
         hyphens: none;
-    }  
+    } 
+    .container {
+        display: flex;
+        align-items: center;
+    }
+    .highlight {
+        margin-left: 20px;
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #f2f2f2;
+        border: 1px solid #ccc;
+    }
 </style>
 
 <h1>
@@ -841,6 +852,38 @@ layout: default
 }{% endraw %}
 </code></pre>
 </p>
+
+<div class="container">
+    <div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto" 
+        data-snippet-clipboard-copy-content="python enhancement.py --test_dir &lt;your_test_dir&gt; --enhanced_dir &lt;your_enhanced_dir&gt; --ckpt &lt;path_to_model_checkpoint&gt;">
+        <pre>python enhancement.py --test_dir <span class="pl-k">&lt;</span>your_test_dir<span class="pl-k">&gt;</span> --enhanced_dir <span class="pl-k">&lt;</span>your_enhanced_dir<span class="pl-k">&gt;</span> --ckpt <span class="pl-k">&lt;</span>path_to_model_checkpoint<span class="pl-k">&gt;</span></pre>
+    </div>
+    <button id="copyButton" class="highlight">Copy</button>
+</div>
+
+<script>
+    document.getElementById('copyButton').addEventListener('click', function() {
+        // Locate the element with the text to copy
+        var textToCopy = document.querySelector('.highlight[data-snippet-clipboard-copy-content]').textContent;
+        
+        // Create a temporary text area to hold the text for copying
+        var tempTextArea = document.createElement('textarea');
+        tempTextArea.value = textToCopy;
+        document.body.appendChild(tempTextArea);
+        tempTextArea.select();
+        
+        try {
+            document.execCommand('copy');
+            alert('Copied the text to clipboard: ' + textToCopy);
+        } catch (err) {
+            console.error('Unable to copy text: ', err);
+        }
+        
+        // Remove the temporary text area
+        document.body.removeChild(tempTextArea);
+    });
+</script>
+
 
 <h2>
     References
