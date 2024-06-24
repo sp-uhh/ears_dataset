@@ -34,11 +34,16 @@ layout: default
     audio {
        width: 100%;
     }
+   .table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on mobile devices */
+    }
     table {
-       width: 100%;
-       border-collapse: collapse;
-       overflow-x: auto;
-   }
+        width: 100%;
+        border-collapse: collapse;
+    }
     html, body {
         margin: 5px; /* Get rid of default margins */
         padding: 5px; /* Get rid of default padding */
@@ -86,79 +91,90 @@ layout: default
 
 <h2>Abstract</h2>
 
-<p>We release the EARS (<b>E</b>xpressive <b>A</b>nechoic <b>R</b>ecordings of <b>S</b>peech) dataset, a high-quality
+<p>
+    We release the EARS (<b>E</b>xpressive <b>A</b>nechoic <b>R</b>ecordings of <b>S</b>peech) dataset, a high-quality
     speech dataset comprising 107 speakers from diverse backgrounds, totalling in more than 100 hours of clean, anechoic
     speech data. The dataset covers a large range of different speaking styles, including emotional speech, different
     reading styles, non-verbal sounds, and conversational freeform speech. We benchmark various methods for speech
     enhancement and dereverberation on the dataset and evaluate their performance through a set of instrumental metrics.
     In addition, we conduct a listening test with 20 participants for the speech enhancement task, where a generative
     method is preferred. We introduce a blind test set that allows for automatic online evaluation of uploaded data.
-    Dataset download links and automatic evaluation server can be found online.</p>
+    Dataset download links and automatic evaluation server can be found online.
+</p>
 
 <h2>EARS Dataset</h2>
 
 <p>The EARS dataset is characterized by its scale, diversity, and high recording quality. In Table 1, we list characteristics of the EARS dataset in comparison to other speech datasets. </p>
 
-<table style="width:100%; border-collapse: collapse;">
-    <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
-        <strong>Table 1: Speech datasets.</strong> In contrast to existing datasets, the EARS dataset is of higher
-        recording quality, large, and more diverse. <sup>&dagger;</sup>contains files with limited bandwidth.
-    </caption>
-    <thead>
-        <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
-            <th>&nbsp;</th>
-            <th>hours</th>
-            <th>speakers</th>
-            <th>sample rate</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>DNS (LibriVox) <span class="reference" data-ref="librivox"></span></td>
-            <td>556</td>
-            <td>1948</td>
-            <td>48 kHz<sup>&dagger;</sup></td>
-        </tr>
-        <tr>
-            <td>LibriSpeech <span class="reference" data-ref="librispeech"></span></td>
-            <td>982</td>
-            <td>2484</td>
-            <td>16 kHz</td>
-        </tr>
-        <tr>
-            <td>LJSpeech <span class="reference" data-ref="ljspeech"></span></td>
-            <td>24</td>
-            <td>1</td>
-            <td>22.05 kHz</td>
-        </tr>
-        <tr>
-            <td>TIMIT <span class="reference" data-ref="timit"></span></td>
-            <td>5</td>
-            <td>632</td>
-            <td>16 kHz</td>
-        </tr>
-        <tr>
-            <td>VCTK <span class="reference" data-ref="vctk"></span></td>
-            <td>44</td>
-            <td>110</td>
-            <td>48 kHz</td>
-        </tr>
-        <tr>
-            <td>WSJ0 <span class="reference" data-ref="wsj0"></span></td>
-            <td>29</td>
-            <td>119</td>
-            <td>16 kHz</td>
-        </tr>
-        <tr style="border-bottom: 2px solid black;">
-            <td><b>EARS (ours)</b></td>
-            <td><b>100</b></td>
-            <td><b>107</b></td>
-            <td><b>48 kHz</b></td>
-        </tr>
-    </tbody>
-</table>
+<div class="table-container"></div>
+    <table>
+        <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
+            <strong>Table 1: Speech datasets.</strong> In contrast to existing datasets, the EARS dataset is of higher
+            recording quality, large, and more diverse. <sup>&dagger;</sup>contains files with limited bandwidth.
+        </caption>
+        <thead>
+            <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
+                <th>&nbsp;</th>
+                <th>hours</th>
+                <th>speakers</th>
+                <th>sample rate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>DNS (LibriVox) <span class="reference" data-ref="librivox"></span></td>
+                <td>556</td>
+                <td>1948</td>
+                <td>48 kHz<sup>&dagger;</sup></td>
+            </tr>
+            <tr>
+                <td>LibriSpeech <span class="reference" data-ref="librispeech"></span></td>
+                <td>982</td>
+                <td>2484</td>
+                <td>16 kHz</td>
+            </tr>
+            <tr>
+                <td>LJSpeech <span class="reference" data-ref="ljspeech"></span></td>
+                <td>24</td>
+                <td>1</td>
+                <td>22.05 kHz</td>
+            </tr>
+            <tr>
+                <td>TIMIT <span class="reference" data-ref="timit"></span></td>
+                <td>5</td>
+                <td>632</td>
+                <td>16 kHz</td>
+            </tr>
+            <tr>
+                <td>VCTK <span class="reference" data-ref="vctk"></span></td>
+                <td>44</td>
+                <td>110</td>
+                <td>48 kHz</td>
+            </tr>
+            <tr>
+                <td>WSJ0 <span class="reference" data-ref="wsj0"></span></td>
+                <td>29</td>
+                <td>119</td>
+                <td>16 kHz</td>
+            </tr>
+            <tr style="border-bottom: 2px solid black;">
+                <td><b>EARS (ours)</b></td>
+                <td><b>100</b></td>
+                <td><b>107</b></td>
+                <td><b>48 kHz</b></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-<p>EARS contains 100 h of anechoic speech recordings at 48 kHz from over 100 English speakers with high demographic diversity. The dataset spans the full range of human speech, including reading tasks in seven different reading styles, emotional reading and freeform speech in 22 different emotions, conversational speech, and non-verbal sounds like laughter or coughing. Reading tasks feature seven styles (regular, loud, whisper, fast, slow, high pitch, and low pitch). Additionally, the dataset features unconstrained freeform speech and speech in 22 different emotional styles. We provide transcriptions of the reading portion and meta-data of the speakers (gender, age, race, first language).</p>
+<p>
+    EARS contains 100 h of anechoic speech recordings at 48 kHz from over 100 English speakers with high demographic diversity. 
+    The dataset spans the full range of human speech, including reading tasks in seven different reading styles, emotional reading 
+    and freeform speech in 22 different emotions, conversational speech, and non-verbal sounds like laughter or coughing. Reading 
+    tasks feature seven styles (regular, loud, whisper, fast, slow, high pitch, and low pitch). Additionally, the dataset features 
+    unconstrained freeform speech and speech in 22 different emotional styles. We provide transcriptions of the reading portion and 
+    meta-data of the speakers (gender, age, race, first language).
+</p>
 
 <h3>Audio Examples</h3>
 
@@ -246,77 +262,83 @@ p020/freeform_speech_01.wav<br>
 
 <h2>Benchmarks</h2>
 
-<p>The EARS dataset enables various speech processing tasks to be evaluated in a controlled and comparable way. Here, we
-    present benchmarks for speech enhancement and dereverberation tasks.</p>
+<p>
+    The EARS dataset enables various speech processing tasks to be evaluated in a controlled and comparable way. Here, we
+    present benchmarks for speech enhancement and dereverberation tasks.
+</p>
 
 <br>
 
 <h3>EARS-WHAM</h3>
 
-<p>For the task of speech enhancement, we construct the EARS-WHAM dataset, which mixes speech from the EARS dataset with
+<p>
+    For the task of speech enhancement, we construct the EARS-WHAM dataset, which mixes speech from the EARS dataset with
     real noise recordings from the WHAM! dataset <span class="reference" data-ref="wham"></span>. More details can be
-    found in the <a href="https://arxiv.org/abs/2406.06185" target="_blank">paper</a>.</p>
+    found in the <a href="https://arxiv.org/abs/2406.06185" target="_blank">paper</a>.
+</p>
 
 <h4>Results</h4>
 
-<table style="width:100%; border-collapse: collapse;">
-    <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
-        <strong>Table 2: Results on EARS-WHAM.</strong> Values indicate the mean of the metrics over the test set. The
-        best results are highlighted in bold.
-    </caption>
-    <thead>
-        <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
-            <th></th>
-            <th style="text-align: right;">POLQA</th>
-            <th style="text-align: right;">SI-SDR</th>
-            <th style="text-align: right;">PESQ</th>
-            <th style="text-align: right;">ESTOI</th>
-            <th style="text-align: right;">DNSMOS</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Noisy</td>
-            <td style="text-align: right;">1.71</td>
-            <td style="text-align: right;">5.98</td>
-            <td style="text-align: right;">1.24</td>
-            <td style="text-align: right;">0.49</td>
-            <td style="text-align: right;">2.74</td>
-        </tr>
-        <tr>
-            <td>Conv-TasNet <span class="reference" data-ref="convtasnet"></span></td>
-            <td style="text-align: right;">2.73</td>
-            <td style="text-align: right;"><strong>16.93</strong></td>
-            <td style="text-align: right;">2.31</td>
-            <td style="text-align: right;">0.70</td>
-            <td style="text-align: right;">3.47</td>
-        </tr>
-        <tr>
-            <td>CDiffuSE <span class="reference" data-ref="cdiffuse"></span></td>
-            <td style="text-align: right;">1.81</td>
-            <td style="text-align: right;">8.35</td>
-            <td style="text-align: right;">1.60</td>
-            <td style="text-align: right;">0.53</td>
-            <td style="text-align: right;">2.87</td>
-        </tr>
-        <tr>
-            <td>Demucs <span class="reference" data-ref="demucs"></span></td>
-            <td style="text-align: right;">2.97</td>
-            <td style="text-align: right;">16.92</td>
-            <td style="text-align: right;">2.37</td>
-            <td style="text-align: right;">0.71</td>
-            <td style="text-align: right;">3.66</td>
-        </tr>
-        <tr style="border-bottom: 2px solid black;">
-            <td>SGMSE+ <span class="reference" data-ref="sgmse"></span></td>
-            <td style="text-align: right;"><strong>3.40</strong></td>
-            <td style="text-align: right;">16.78</td>
-            <td style="text-align: right;"><strong>2.50</strong></td>
-            <td style="text-align: right;"><strong>0.73</strong></td>
-            <td style="text-align: right;"><strong>3.88</strong></td>
-        </tr>
-    </tbody>
-</table>
+<div class="table-container"></div>
+    <table style="width:100%; border-collapse: collapse;">
+        <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
+            <strong>Table 2: Results on EARS-WHAM.</strong> Values indicate the mean of the metrics over the test set. The
+            best results are highlighted in bold.
+        </caption>
+        <thead>
+            <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
+                <th></th>
+                <th style="text-align: right;">POLQA</th>
+                <th style="text-align: right;">SI-SDR</th>
+                <th style="text-align: right;">PESQ</th>
+                <th style="text-align: right;">ESTOI</th>
+                <th style="text-align: right;">DNSMOS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Noisy</td>
+                <td style="text-align: right;">1.71</td>
+                <td style="text-align: right;">5.98</td>
+                <td style="text-align: right;">1.24</td>
+                <td style="text-align: right;">0.49</td>
+                <td style="text-align: right;">2.74</td>
+            </tr>
+            <tr>
+                <td>Conv-TasNet <span class="reference" data-ref="convtasnet"></span></td>
+                <td style="text-align: right;">2.73</td>
+                <td style="text-align: right;"><strong>16.93</strong></td>
+                <td style="text-align: right;">2.31</td>
+                <td style="text-align: right;">0.70</td>
+                <td style="text-align: right;">3.47</td>
+            </tr>
+            <tr>
+                <td>CDiffuSE <span class="reference" data-ref="cdiffuse"></span></td>
+                <td style="text-align: right;">1.81</td>
+                <td style="text-align: right;">8.35</td>
+                <td style="text-align: right;">1.60</td>
+                <td style="text-align: right;">0.53</td>
+                <td style="text-align: right;">2.87</td>
+            </tr>
+            <tr>
+                <td>Demucs <span class="reference" data-ref="demucs"></span></td>
+                <td style="text-align: right;">2.97</td>
+                <td style="text-align: right;">16.92</td>
+                <td style="text-align: right;">2.37</td>
+                <td style="text-align: right;">0.71</td>
+                <td style="text-align: right;">3.66</td>
+            </tr>
+            <tr style="border-bottom: 2px solid black;">
+                <td>SGMSE+ <span class="reference" data-ref="sgmse"></span></td>
+                <td style="text-align: right;"><strong>3.40</strong></td>
+                <td style="text-align: right;">16.78</td>
+                <td style="text-align: right;"><strong>2.50</strong></td>
+                <td style="text-align: right;"><strong>0.73</strong></td>
+                <td style="text-align: right;"><strong>3.88</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <h4>Audio Examples</h4>
 
@@ -440,74 +462,80 @@ p020/freeform_speech_01.wav<br>
 
 <h3>Blind test set</h3>
 
-<p>We create a blind test set for which we only publish the noisy audio files but not the clean ground truth. It
+<p>
+    We create a blind test set for which we only publish the noisy audio files but not the clean ground truth. It
     contains 743 files (2 h) from six speakers (3 male, 3 female) that are not part of the EARS dataset and noise
-    especially recorded for this test set.</p>
+    especially recorded for this test set.
+</p>
 
 <h4>Results</h4>
 
-<table style="width:100%; border-collapse: collapse;">
-    <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
-        <strong>Table 3: Results for the blind test.</strong> Values indicate the mean of the metrics over the test set.
-        The best results are highlighted in bold.
-    </caption>
-    <thead>
-        <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
-            <th></th>
-            <th style="text-align: right;">POLQA</th>
-            <th style="text-align: right;">SI-SDR</th>
-            <th style="text-align: right;">PESQ</th>
-            <th style="text-align: right;">ESTOI</th>
-            <th style="text-align: right;">DNSMOS</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Noisy</td>
-            <td style="text-align: right;">1.81</td>
-            <td style="text-align: right;">6.48</td>
-            <td style="text-align: right;">1.28</td>
-            <td style="text-align: right;">0.57</td>
-            <td style="text-align: right;">2.79</td>
-        </tr>
-        <tr>
-            <td>Conv-TasNet <span class="reference" data-ref="convtasnet"></span></td>
-            <td style="text-align: right;">2.68</td>
-            <td style="text-align: right;">16.56</td>
-            <td style="text-align: right;">2.41</td>
-            <td style="text-align: right;">0.75</td>
-            <td style="text-align: right;">3.43</td>
-        </tr>
-        <tr>
-            <td>CDiffuSE <span class="reference" data-ref="cdiffuse"></span></td>
-            <td style="text-align: right;">1.93</td>
-            <td style="text-align: right;">8.22</td>
-            <td style="text-align: right;">1.64</td>
-            <td style="text-align: right;">0.59</td>
-            <td style="text-align: right;">2.92</td>
-        </tr>
-        <tr>
-            <td>Demucs <span class="reference" data-ref="demucs"></span></td>
-            <td style="text-align: right;">3.03</td>
-            <td style="text-align: right;"><strong>16.81</strong></td>
-            <td style="text-align: right;">2.50</td>
-            <td style="text-align: right;">0.76</td>
-            <td style="text-align: right;">3.62</td>
-        </tr>
-        <tr style="border-bottom: 2px solid black;">
-            <td>SGMSE+ <span class="reference" data-ref="sgmse"></span></td>
-            <td style="text-align: right;"><strong>3.35</strong></td>
-            <td style="text-align: right;">16.43</td>
-            <td style="text-align: right;"><strong>2.59</strong></td>
-            <td style="text-align: right;"><strong>0.78</strong></td>
-            <td style="text-align: right;"><strong>3.79</strong></td>
-        </tr>
-    </tbody>
-</table>
+<div class="table-container"></div>
+    <table>
+        <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
+            <strong>Table 3: Results for the blind test.</strong> Values indicate the mean of the metrics over the test set.
+            The best results are highlighted in bold.
+        </caption>
+        <thead>
+            <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
+                <th></th>
+                <th style="text-align: right;">POLQA</th>
+                <th style="text-align: right;">SI-SDR</th>
+                <th style="text-align: right;">PESQ</th>
+                <th style="text-align: right;">ESTOI</th>
+                <th style="text-align: right;">DNSMOS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Noisy</td>
+                <td style="text-align: right;">1.81</td>
+                <td style="text-align: right;">6.48</td>
+                <td style="text-align: right;">1.28</td>
+                <td style="text-align: right;">0.57</td>
+                <td style="text-align: right;">2.79</td>
+            </tr>
+            <tr>
+                <td>Conv-TasNet <span class="reference" data-ref="convtasnet"></span></td>
+                <td style="text-align: right;">2.68</td>
+                <td style="text-align: right;">16.56</td>
+                <td style="text-align: right;">2.41</td>
+                <td style="text-align: right;">0.75</td>
+                <td style="text-align: right;">3.43</td>
+            </tr>
+            <tr>
+                <td>CDiffuSE <span class="reference" data-ref="cdiffuse"></span></td>
+                <td style="text-align: right;">1.93</td>
+                <td style="text-align: right;">8.22</td>
+                <td style="text-align: right;">1.64</td>
+                <td style="text-align: right;">0.59</td>
+                <td style="text-align: right;">2.92</td>
+            </tr>
+            <tr>
+                <td>Demucs <span class="reference" data-ref="demucs"></span></td>
+                <td style="text-align: right;">3.03</td>
+                <td style="text-align: right;"><strong>16.81</strong></td>
+                <td style="text-align: right;">2.50</td>
+                <td style="text-align: right;">0.76</td>
+                <td style="text-align: right;">3.62</td>
+            </tr>
+            <tr style="border-bottom: 2px solid black;">
+                <td>SGMSE+ <span class="reference" data-ref="sgmse"></span></td>
+                <td style="text-align: right;"><strong>3.35</strong></td>
+                <td style="text-align: right;">16.43</td>
+                <td style="text-align: right;"><strong>2.59</strong></td>
+                <td style="text-align: right;"><strong>0.78</strong></td>
+                <td style="text-align: right;"><strong>3.79</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <h4>Audio Examples</h4>
 
-Here we present audio examples for the blind test set. Below we show the noisy input, processed files for Conv-TasNet <span class="reference" data-ref="convtasnet"></span>, CDiffuSE <span class="reference" data-ref="cdiffuse"></span>, Demucs <span class="reference" data-ref="demucs"></span>, and SGMSE+ <span class="reference" data-ref="sgmse"></span>.
+<p>Here we present audio examples for the blind test set. Below we show the noisy input, processed files for Conv-TasNet <span class="reference" data-ref="convtasnet"></span>, 
+    CDiffuSE <span class="reference" data-ref="cdiffuse"></span>, Demucs <span class="reference" data-ref="demucs"></span>, and SGMSE+ <span class="reference" data-ref="sgmse"></span>.
+</p>
 
 <p>Select an audio file: &nbsp;&nbsp;
     <select id="audioSelectBlind" onchange="playAudioBlind()">
@@ -616,7 +644,10 @@ Here we present audio examples for the blind test set. Below we show the noisy i
 
 <h3>Evaluation on real-world data</h3>
 
-<p>This demo showcases the denoising capabilities of SGMSE+ <span class="reference" data-ref="sgmse"></span> trained using the EARS-WHAM dataset. The red frame represents the noisy input audio, while the green frame indicates the enhanced, noise-reduced output.</p>
+<p>
+    This demo showcases the denoising capabilities of SGMSE+ <span class="reference" data-ref="sgmse"></span> trained using the EARS-WHAM dataset. 
+    The red frame represents the noisy input audio, while the green frame indicates the enhanced, noise-reduced output.
+</p>
 
 <div class="video-container">
     <iframe src="https://www.youtube.com/embed/H5FiO0JxPK4" frameborder="0" allowfullscreen></iframe>
@@ -633,40 +664,42 @@ Here we present audio examples for the blind test set. Below we show the noisy i
 
 <h4>Results</h4>
 
-<table style="width:100%; border-collapse: collapse;">
-    <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
-        <strong>Table 4: Results on EARS-Reverb.</strong> Values indicate the mean of the metrics over the test set. The
-        best results are highlighted in bold.
-    </caption>
-    <thead>
-        <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
-            <th></th>
-            <th style="text-align: right;">POLQA</th>
-            <th style="text-align: right;">SI-SDR</th>
-            <th style="text-align: right;">PESQ</th>
-            <th style="text-align: right;">ESTOI</th>
-            <th style="text-align: right;">MOS Reverb</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Reverberant</td>
-            <td style="text-align: right;">1.75</td>
-            <td style="text-align: right;">-16.17</td>
-            <td style="text-align: right;">1.48</td>
-            <td style="text-align: right;">0.52</td>
-            <td style="text-align: right;">2.99</td>
-        </tr>
-        <tr style="border-bottom: 2px solid black;">
-            <td>SGMSE+ <span class="reference" data-ref="sgmse"></span></td>
-            <td style="text-align: right;"><strong>3.61</strong></td>
-            <td style="text-align: right;"><strong>5.79</strong></td>
-            <td style="text-align: right;"><strong>3.03</strong></td>
-            <td style="text-align: right;"><strong>0.85</strong></td>
-            <td style="text-align: right;"><strong>4.73</strong></td>
-        </tr>
-    </tbody>
-</table>
+<div class="table-container"></div>
+    <table>
+        <caption style="caption-side: bottom; text-align: left; padding: 8px; font-style: italic;">
+            <strong>Table 4: Results on EARS-Reverb.</strong> Values indicate the mean of the metrics over the test set. The
+            best results are highlighted in bold.
+        </caption>
+        <thead>
+            <tr style="border-top: 2px solid black; border-bottom: 2px solid black;">
+                <th></th>
+                <th style="text-align: right;">POLQA</th>
+                <th style="text-align: right;">SI-SDR</th>
+                <th style="text-align: right;">PESQ</th>
+                <th style="text-align: right;">ESTOI</th>
+                <th style="text-align: right;">MOS Reverb</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Reverberant</td>
+                <td style="text-align: right;">1.75</td>
+                <td style="text-align: right;">-16.17</td>
+                <td style="text-align: right;">1.48</td>
+                <td style="text-align: right;">0.52</td>
+                <td style="text-align: right;">2.99</td>
+            </tr>
+            <tr style="border-bottom: 2px solid black;">
+                <td>SGMSE+ <span class="reference" data-ref="sgmse"></span></td>
+                <td style="text-align: right;"><strong>3.61</strong></td>
+                <td style="text-align: right;"><strong>5.79</strong></td>
+                <td style="text-align: right;"><strong>3.03</strong></td>
+                <td style="text-align: right;"><strong>0.85</strong></td>
+                <td style="text-align: right;"><strong>4.73</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <h4>Audio Examples</h4>
 
