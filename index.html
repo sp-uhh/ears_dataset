@@ -66,49 +66,11 @@ layout: default
     }
 
     /* Responsive Styling for Smaller Screens */
-    @media screen and (max-width: 1024px) {
-        th, td {
-            font-size: 0.9em; /* Slightly reduce font size */
-        }
-    }
-
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 400px) {
         th, td {
             font-size: 0.8em; /* Further reduce font size */
         }
-    }
-
-    @media screen and (max-width: 600px) {
-        table {
-            display: block;
-        }
-        thead, tbody, th, td, tr {
-            display: block;
-        }
-
-        thead tr {
-            display: none;
-        }
-        td {
-            position: relative;
-            padding-left: 50%;
-            text-align: right;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-size: 0.75em; /* Reduce font size for very small screens */
-        }   
-        td::before {
-            content: attr(data-label);
-            position: absolute;
-            left: 0;
-            width: 50%;
-            padding-left: 15px;
-            font-weight: bold;
-            text-align: left;
-            font-size: 0.75em; /* Match the font size of the content */
-        }
-    }
+        
 </style>
 
 <h1>EARS: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation</h1>
