@@ -6,20 +6,6 @@ layout: default
 ---
 
 <style>
-    pre {
-        width: calc(100% - 30px);
-        background-color: #f4f4f4;
-        border: 1px solid #ddd;
-        padding: 0px;
-        overflow: auto;
-        border-radius: 0px;
-        margin: 0;
-    }
-    code {
-        font-family: monospace;
-        padding: 0px;
-        margin: 0;
-    }
     .video-container {
         position: relative;
         padding-bottom: 56.25%; /* 16:9 aspect ratio */
@@ -85,13 +71,27 @@ layout: default
     }
     .inner-container {
         width: calc(100% - 30px);
-        align-items: center;
+        background-color: #f4f4f4;
+        align-items: left;
         padding: 0;
         margin: 0 auto;
         overflow: hidden;
         position: relative; /* Relative positioning for absolute child positioning */
     }
-
+    pre {
+        width: calc(100% - 30px);
+        background-color: #f4f4f4;
+        border: 1px solid #ddd;
+        padding: 0px;
+        overflow: auto;
+        border-radius: 0px;
+        margin: 0;
+    }
+    code {
+        font-family: monospace;
+        padding: 0px;
+        margin: 0;
+    }
     .highlight {
         cursor: pointer;
         padding: 4px 4px;
