@@ -7,12 +7,12 @@ layout: default
 
 <style>
     pre {
+        width: calc(100% - 20px);
         background-color: #f4f4f4;
         border: 1px solid #ddd;
         padding: 10px;
         overflow: auto;
         border-radius: 4px;
-        width:  calc(100% - 20px);
     }
     code {
         font-family: monospace;
@@ -75,7 +75,13 @@ layout: default
         overflow-x: auto; /* Handle overflow */
         padding: 0;
         margin: 0 auto;
-        
+    }
+    .inner-container {
+        width: calc(100% - 20px);
+        align-items: center;
+        overflow-x: auto; /* Handle overflow */
+        padding: 0;
+        margin: 0 auto;
     }
 
     .highlight {
@@ -867,7 +873,7 @@ layout: default
 </p>
 
 <div class="container">
-    <div dir="auto" data-snippet-clipboard-copy-content="{% raw %}@inproceedings{richter2024ears,
+    <div class="inner-container" dir="auto" data-snippet-clipboard-copy-content="{% raw %}@inproceedings{richter2024ears,
     title={{EARS}: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation},
     author={Richter, Julius and Wu, Yi-Chiao and Krenn, Steven and Welker, Simon and Lay, Bunlong and Watanabe, Shinjii and Richard, Alexander and Gerkmann, Timo},
     booktitle={Interspeech},
