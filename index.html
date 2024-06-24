@@ -69,12 +69,26 @@ layout: default
         display: flex;
         align-items: center;
     }
+
     .highlight {
-        margin-left: 20px;
+        margin-left: 10px;
         cursor: pointer;
         padding: 5px 10px;
-        background-color: #f2f2f2;
-        border: 1px solid #ccc;
+        background-color: #007bff;
+        border: 1px solid #007bff;
+        color: white;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .highlight svg {
+        fill: white;
+        margin-right: 5px;
+    }
+
+    .highlight:hover {
+        background-color: #0056b3;
     }
 </style>
 
@@ -858,7 +872,12 @@ layout: default
         data-snippet-clipboard-copy-content="python enhancement.py --test_dir &lt;your_test_dir&gt; --enhanced_dir &lt;your_enhanced_dir&gt; --ckpt &lt;path_to_model_checkpoint&gt;">
         <pre>python enhancement.py --test_dir <span class="pl-k">&lt;</span>your_test_dir<span class="pl-k">&gt;</span> --enhanced_dir <span class="pl-k">&lt;</span>your_enhanced_dir<span class="pl-k">&gt;</span> --ckpt <span class="pl-k">&lt;</span>path_to_model_checkpoint<span class="pl-k">&gt;</span></pre>
     </div>
-    <button id="copyButton" class="highlight">Copy</button>
+    <button id="copyButton" class="highlight">
+        <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 16 16" width="16" class="octicon octicon-clippy">
+            <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+        </svg>
+        Copy
+    </button>
 </div>
 
 <script>
@@ -871,7 +890,7 @@ layout: default
         tempTextArea.value = textToCopy;
         document.body.appendChild(tempTextArea);
         tempTextArea.select();
-        
+
         try {
             document.execCommand('copy');
             alert('Copied the text to clipboard: ' + textToCopy);
