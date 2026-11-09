@@ -902,7 +902,7 @@ layout: default
       year      = {2026}
 }{% endraw %}</code></pre>
     </div>
-    < id="copy" class="highlight">
+    <button class="highlight copy-btn" type="button">
         <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 16 16" width="16" class="octicon octicon-clippy">
             <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path>
             <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
@@ -937,7 +937,7 @@ layout: default
     year={2024}
 }{% endraw %}</code></pre>
     </div>
-    < id="copy" class="highlight">
+    <button class="highlight copy-btn" type="button">
         <svg xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 16 16" width="16" class="octicon octicon-clippy">
             <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path>
             <path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
@@ -946,11 +946,14 @@ layout: default
 </div>
 
 <script>
-    document.getElementById('copyButton').addEventListener('click', function() {
-        const codeContent = document.querySelector('div[data-snippet-clipboard-copy-content]').getAttribute('data-snippet-clipboard-copy-content');
-        navigator.clipboard.writeText(codeContent).then(function() {
-        }, function() {
-            alert('Failed to copy!');
+    document.querySelectorAll('.copy-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const text = btn.closest('.container')
+                            .querySelector('[data-snippet-clipboard-copy-content]')
+                            .getAttribute('data-snippet-clipboard-copy-content');
+            navigator.clipboard.writeText(text).catch(function () {
+                alert('Failed to copy!');
+            });
         });
     });
 </script>
