@@ -870,13 +870,33 @@ layout: default
 
 <br>
 
-<h2 id="transcriptions">
-    EARS-WHAM Test Set Transcriptions
-</h2>
+ <h2 id="transcriptions">EARS-WHAM Test Set Transcriptions</h2>
 
 <p>
-    Reference transcriptions for the EARS-WHAM test set will be uploaded soon.
+      Manual reference transcriptions for all 886 utterances in the EARS-WHAM (v2) test set are available below. These transcriptions were created for the evaluation in the SIPS paper.
 </p>
+
+<p>
+      <a href="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham-v2-test-transcriptions.json">
+            Download EARS-WHAM (v2) test set transcriptions (JSON)
+      </a>
+</p>
+
+<p>
+      Each entry contains the speaker identifier (<code>speaker</code>), utterance identifier (<code>id</code>), start and end times in seconds (<code>start_time</code>, <code>end_time</code>), and reference text (<code>words</code>). Utterance identifiers are strings with leading zeros preserved. For example, speaker code>p102</code> and ID <code>00007</code> correspond to <code>p102/00007.wav</code>.
+</p>
+
+<p>
+      If you use these transcriptions in your research, please cite the <a href="https://arxiv.org/abs/2605.06189">SIPS paper</a> in addition to the EARS dataset paper:
+</p>
+
+<pre><code>@inproceedings{richter2026sips,
+      title     = {Predictive-Generative Drift Decomposition for Speech Enhancement and Separation},
+      author    = {Richter, Julius and Masuyama, Yoshiki and Boeddeker, Christoph and Edo, Takahiro and Wichern, Gordon and Le Roux, Jonathan},
+      booktitle = {Advances in Neural Information Processing Systems},
+      year      = {2026}
+}
+}</code></pre>
 
 <br>
 
